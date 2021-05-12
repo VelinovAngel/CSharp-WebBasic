@@ -1,0 +1,16 @@
+C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\HttpClientDemo\HttpClientDemo\bin\Debug\net5.0\HttpClientDemo.exe
+C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\HttpClientDemo\HttpClientDemo\bin\Debug\net5.0\HttpClientDemo.deps.json
+C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\HttpClientDemo\HttpClientDemo\bin\Debug\net5.0\HttpClientDemo.runtimeconfig.json
+C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\HttpClientDemo\HttpClientDemo\bin\Debug\net5.0\HttpClientDemo.runtimeconfig.dev.json
+C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\HttpClientDemo\HttpClientDemo\bin\Debug\net5.0\HttpClientDemo.dll
+C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\HttpClientDemo\HttpClientDemo\bin\Debug\net5.0\ref\HttpClientDemo.dll
+C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\HttpClientDemo\HttpClientDemo\bin\Debug\net5.0\HttpClientDemo.pdb
+C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\HttpClientDemo\HttpClientDemo\obj\Debug\net5.0\HttpClientDemo.csprojAssemblyReference.cache
+C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\HttpClientDemo\HttpClientDemo\obj\Debug\net5.0\HttpClientDemo.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\HttpClientDemo\HttpClientDemo\obj\Debug\net5.0\HttpClientDemo.AssemblyInfoInputs.cache
+C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\HttpClientDemo\HttpClientDemo\obj\Debug\net5.0\HttpClientDemo.AssemblyInfo.cs
+C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\HttpClientDemo\HttpClientDemo\obj\Debug\net5.0\HttpClientDemo.csproj.CoreCompileInputs.cache
+C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\HttpClientDemo\HttpClientDemo\obj\Debug\net5.0\HttpClientDemo.dll
+C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\HttpClientDemo\HttpClientDemo\obj\Debug\net5.0\ref\HttpClientDemo.dll
+C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\HttpClientDemo\HttpClientDemo\obj\Debug\net5.0\HttpClientDemo.pdb
+C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\HttpClientDemo\HttpClientDemo\obj\Debug\net5.0\HttpClientDemo.genruntimeconfig.cache

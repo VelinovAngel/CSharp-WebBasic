@@ -1,6 +1,9 @@
 ﻿using System;
-using System.Net.Http;
 using System.Text;
+
+using System.Net;
+using System.Net.Http;
+using System.Net.Sockets;
 using System.Threading.Tasks;
 
 namespace HttpClientDemo
@@ -9,10 +12,19 @@ namespace HttpClientDemo
     {
         static void Main(string[] args)
         {
-           
+            TcpListener tcpListener = new TcpListener(IPAddress.Loopback, 80);
+            tcpListener.Start();
+
+            // deamon // service 
+
+            while (true)
+            {  
+                var client = tcpListener.AcceptTcpClient();
+                
+            }
         }
 
-        public async Task ReadData()
+        public static async Task ReadData()
         {
             Console.OutputEncoding = Encoding.UTF8;
             string url = "https://softuni.bg";
