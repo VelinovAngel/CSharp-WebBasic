@@ -31,7 +31,9 @@ namespace HttpClientDemo
                     Console.WriteLine(requestString);
 
 
-                    string html = $"<h1> Hello from AngelServer  {DateTime.Now}</h1>";
+                    string html = $"<h1> Hello from AngelServer  {DateTime.Now}</h1>" +
+                        $"<form method=post><input name=username /><input name=password />" +
+                        $"<input type=submit /></form>";
 
                     string response = "HTTP/1.1 200 OK"/* 307 Redirect*/ + NewLine +
                         "Server: AngelServer 2021" + NewLine +
