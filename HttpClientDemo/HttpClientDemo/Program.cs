@@ -29,7 +29,6 @@ namespace HttpClientDemo
         {
             using (var stream = client.GetStream())
             {
-
                 byte[] buffer = new byte[100000];
                 var lenght = await stream.ReadAsync(buffer, 0, buffer.Length);
 
