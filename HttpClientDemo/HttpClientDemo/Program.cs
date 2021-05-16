@@ -27,7 +27,6 @@ namespace HttpClientDemo
 
         public static async Task ProcessClient(TcpClient client)
         {
-
             using (var stream = client.GetStream())
             {
 
