@@ -16,7 +16,7 @@ namespace HttpClientDemo
             TcpListener tcpListener = new TcpListener(IPAddress.Loopback, 80);
             tcpListener.Start();
 
-            // deamon // service 
+            // deamons - linux // services - windows
 
             while (true)
             {
