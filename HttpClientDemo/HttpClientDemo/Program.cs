@@ -35,6 +35,7 @@
                 var requestString = Encoding.UTF8.GetString(buffer, 0, lenght);
                 Console.WriteLine(requestString);
 
+                //how to add many pages??
                 string html = $"<h1> Hello from AngelServer  {DateTime.Now}</h1>" +
                     $"<form method=post><input name=username /><input name=password />" +
                     $"<input type=submit /></form>";
