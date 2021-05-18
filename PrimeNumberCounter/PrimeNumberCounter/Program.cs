@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.IO;
-using System.Linq;
-using System.Net;
+
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
@@ -103,7 +100,7 @@ namespace PrimeNumbersCounter
         {
             HttpClient httpClient = new HttpClient();
             var url = $"https://vicove.com/vic-{i}";
-            httpClient.GetAsync(url).ContinueWith((httpResponse) =>
+            await httpClient.GetAsync(url).ContinueWith((httpResponse) =>
             {
                 if (httpResponse.IsFaulted)
                 {
