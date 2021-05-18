@@ -1,0 +1,16 @@
+C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\PrimeNumberCounter\PrimeNumberCounter\bin\Debug\net5.0\PrimeNumberCounter.exe
+C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\PrimeNumberCounter\PrimeNumberCounter\bin\Debug\net5.0\PrimeNumberCounter.deps.json
+C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\PrimeNumberCounter\PrimeNumberCounter\bin\Debug\net5.0\PrimeNumberCounter.runtimeconfig.json
+C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\PrimeNumberCounter\PrimeNumberCounter\bin\Debug\net5.0\PrimeNumberCounter.runtimeconfig.dev.json
+C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\PrimeNumberCounter\PrimeNumberCounter\bin\Debug\net5.0\PrimeNumberCounter.dll
+C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\PrimeNumberCounter\PrimeNumberCounter\bin\Debug\net5.0\ref\PrimeNumberCounter.dll
+C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\PrimeNumberCounter\PrimeNumberCounter\bin\Debug\net5.0\PrimeNumberCounter.pdb
+C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\PrimeNumberCounter\PrimeNumberCounter\obj\Debug\net5.0\PrimeNumberCounter.csprojAssemblyReference.cache
+C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\PrimeNumberCounter\PrimeNumberCounter\obj\Debug\net5.0\PrimeNumberCounter.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\PrimeNumberCounter\PrimeNumberCounter\obj\Debug\net5.0\PrimeNumberCounter.AssemblyInfoInputs.cache
+C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\PrimeNumberCounter\PrimeNumberCounter\obj\Debug\net5.0\PrimeNumberCounter.AssemblyInfo.cs
+C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\PrimeNumberCounter\PrimeNumberCounter\obj\Debug\net5.0\PrimeNumberCounter.csproj.CoreCompileInputs.cache
+C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\PrimeNumberCounter\PrimeNumberCounter\obj\Debug\net5.0\PrimeNumberCounter.dll
+C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\PrimeNumberCounter\PrimeNumberCounter\obj\Debug\net5.0\ref\PrimeNumberCounter.dll
+C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\PrimeNumberCounter\PrimeNumberCounter\obj\Debug\net5.0\PrimeNumberCounter.pdb
+C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\PrimeNumberCounter\PrimeNumberCounter\obj\Debug\net5.0\PrimeNumberCounter.genruntimeconfig.cache
