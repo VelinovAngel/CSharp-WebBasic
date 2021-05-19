@@ -46,8 +46,7 @@ namespace PrimeNumbersCounter
             //// {
             ////     var task = Task.Run(() => DownloadAsync(i));
             ////     tasks.Add(task);
-            //// }
-            //// 
+            //// } 
             //// Task.WaitAll(tasks.ToArray());
             //// 
             //// Console.WriteLine(sw2.Elapsed);
