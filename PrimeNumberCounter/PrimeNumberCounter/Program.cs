@@ -33,8 +33,7 @@ namespace PrimeNumbersCounter
 
             // download
             //  ^ write file
-            //     ^ send email
-            //       ^ create
+
 
             //// Stopwatch sw2 = Stopwatch.StartNew();
             //// List<Task> tasks = new List<Task>();
