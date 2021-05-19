@@ -31,8 +31,7 @@ namespace PrimeNumbersCounter
             // 8 virtual CPUs
             // 8 threads
 
-            // download
-            //  ^ write file
+
 
 
             //// Stopwatch sw2 = Stopwatch.StartNew();
