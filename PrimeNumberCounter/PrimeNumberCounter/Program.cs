@@ -39,10 +39,6 @@ namespace PrimeNumbersCounter
             //       ^ send over the Inet
             // prime number
             // 
-            //
-            //
-            // 
-            //
 
             //// Stopwatch sw2 = Stopwatch.StartNew();
             //// List<Task> tasks = new List<Task>();
