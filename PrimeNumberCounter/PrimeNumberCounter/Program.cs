@@ -30,7 +30,7 @@ namespace PrimeNumbersCounter
             // Task scheduler
             // 8 virtual CPUs
             // 8 threads
-            //
+
             // download
             //  ^ write file
             //     ^ send email
