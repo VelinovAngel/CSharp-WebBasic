@@ -31,7 +31,6 @@ namespace PrimeNumbersCounter
             // 8 virtual CPUs
             // 8 threads
 
-
             //// Stopwatch sw2 = Stopwatch.StartNew();
             //// List<Task> tasks = new List<Task>();
             //// for (int i = 1; i <= 100; i++)
