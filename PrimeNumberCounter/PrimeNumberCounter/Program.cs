@@ -52,7 +52,6 @@ namespace PrimeNumbersCounter
             //// Console.WriteLine(sw2.Elapsed);
             //// Console.ReadLine();
 
-            //return;
 
             //Stopwatch sw = Stopwatch.StartNew();
             //Thread thread = new Thread(() => PrintPrimeCount(1, 2_500_000));
