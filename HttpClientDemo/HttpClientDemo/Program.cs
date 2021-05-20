@@ -35,6 +35,12 @@
                 var requestString = Encoding.UTF8.GetString(buffer, 0, lenght);
                 Console.WriteLine(requestString);
 
+                bool sessionSet = false;
+                if (requestString.Contains("sid="))
+                {
+                    sessionSet = true;
+                }
+
                 //how to add many pages??
                 string html = $"<h1> Hello from AngelServer  {DateTime.Now}</h1>" +
                     $"<form method=post><input name=username /><input name=password />" +
@@ -44,6 +50,7 @@
                     "Server: AngelServer 2021" + NewLine +
                     /*"Location: http://www.google.com" + NewLine +*/
                     "Content-Type: text/html; charset=utf-8" + NewLine +
+                    "X-Server-Version: 1.0" + NewLine +
                     "Content-Lenght: " + html.Length + NewLine +
                     NewLine +
                     html;
