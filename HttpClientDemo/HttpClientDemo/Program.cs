@@ -25,7 +25,7 @@
             while (true)
             {
                 var client = tcpListener.AcceptTcpClient();
-                ProcessClient(client); 
+                ProcessClient(client);
             }
         }
 
@@ -40,11 +40,11 @@
                 Console.WriteLine(requestString);
 
                 var sid = Guid.NewGuid().ToString();
-                var match = Regex.Match(@"sid=[^\n]*\r\n", requestString);
+                var match = Regex.Match(requestString, @"sid=[^\n]*\r\n");
 
                 if (match.Success)
                 {
-                    sid = match.Value;
+                    sid = match.Value.Substring(4);
                 }
 
                 Console.WriteLine(sid);
