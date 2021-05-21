@@ -62,7 +62,7 @@
                 }
 
                 //how to add many pages??
-                string html = $"<h1> Hello from AngelServer  {DateTime.Now}</h1>" +
+                string html = $"<h1> Hello from AngelServer  {DateTime.Now} for the {SessionStorage[sid]} time.</h1>" +
                     $"<form method=post><input name=username /><input name=password />" +
                     $"<input type=submit /></form>";
 
@@ -71,9 +71,10 @@
                     /*"Location: http://www.google.com" + NewLine +*/
                     "Content-Type: text/html; charset=utf-8" + NewLine +
                     "X-Server-Version: 1.0" + NewLine +
-                    (!sessionSet ? ($"Set-Cookie: sid={sid}; HttpOnly; Path=/account;" +
+                    $"Set-Cookie: sid={sid}; HttpOnly; Path=/account; Expires=Max-Age" + (100 * 24 * 60 * 60)
+                    /*(!sessionSet ? ($"Set-Cookie: sid={sid}; HttpOnly; Path=/account;" +
                     " Expires="
-                    + DateTime.UtcNow.AddHours(1).ToString("R")) : string.Empty) + NewLine +
+                    + DateTime.UtcNow.AddHours(1).ToString("R")) : string.Empty)*/ + NewLine +
                     "Content-Lenght: " + html.Length + NewLine +
                     NewLine +
                     html;
