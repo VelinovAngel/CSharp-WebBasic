@@ -65,7 +65,7 @@
                     /*"Location: http://www.google.com" + NewLine +*/
                     "Content-Type: text/html; charset=utf-8" + NewLine +
                     "X-Server-Version: 1.0" + NewLine +
-                    (!sessionSet ? ("Set-Cookie: sid=12345678987654dfhd; HttpOnly; Path=/account;" +
+                    (!sessionSet ? ($"Set-Cookie: sid={sid}; HttpOnly; Path=/account;" +
                     " Expires="
                     + DateTime.UtcNow.AddHours(1).ToString("R")) : string.Empty) + NewLine +
                     "Content-Lenght: " + html.Length + NewLine +
