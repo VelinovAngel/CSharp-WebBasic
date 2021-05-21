@@ -47,6 +47,12 @@
                     sid = match.Value.Substring(4);
                 }
 
+                if (!SessionStorage.ContainsKey(sid))
+                {
+                    SessionStorage.Add(sid, 0);
+                }
+                SessionStorage[sid]++;
+
                 Console.WriteLine(sid);
 
                 bool sessionSet = false;
