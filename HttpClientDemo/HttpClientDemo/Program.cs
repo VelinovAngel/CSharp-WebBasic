@@ -8,6 +8,7 @@
     using System.Net.Sockets;
     using System.Threading.Tasks;
     using System.Collections.Generic;
+    using System.Text.RegularExpressions;
 
     class Program
     {
@@ -37,6 +38,8 @@
 
                 var requestString = Encoding.UTF8.GetString(buffer, 0, lenght);
                 Console.WriteLine(requestString);
+
+                Regex.Match(@"sid=[^\n]*\n", requestString);
 
                 bool sessionSet = false;
                 if (requestString.Contains("sid="))
