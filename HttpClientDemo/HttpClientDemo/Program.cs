@@ -39,7 +39,15 @@
                 var requestString = Encoding.UTF8.GetString(buffer, 0, lenght);
                 Console.WriteLine(requestString);
 
-                Regex.Match(@"sid=[^\n]*\n", requestString);
+                var sid = Guid.NewGuid().ToString();
+                var match = Regex.Match(@"sid=[^\n]*\r\n", requestString);
+
+                if (match.Success)
+                {
+                    sid = match.Value;
+                }
+
+                Console.WriteLine(sid);
 
                 bool sessionSet = false;
                 if (requestString.Contains("sid="))
