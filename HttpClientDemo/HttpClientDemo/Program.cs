@@ -7,11 +7,13 @@
     using System.Net.Http;
     using System.Net.Sockets;
     using System.Threading.Tasks;
+    using System.Collections.Generic;
 
     class Program
     {
+        static Dictionary<string, int> SessionStorage = new Dictionary<string, int>();
         const string NewLine = "\r\n";
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
             Console.OutputEncoding = Encoding.UTF8;
             TcpListener tcpListener = new TcpListener(IPAddress.Loopback, 80);
