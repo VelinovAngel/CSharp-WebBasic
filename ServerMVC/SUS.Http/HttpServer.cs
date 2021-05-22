@@ -54,15 +54,11 @@
                         var partialBuffer = new byte[count];
                         Array.Copy(buffer, partialBuffer, count);
                         data.AddRange(partialBuffer);
+                        break;
                     }
                     else
                     {
                         data.AddRange(buffer);
-                    }
-
-                    if (count == 0)
-                    {
-                        break;
                     }
                 }
 
