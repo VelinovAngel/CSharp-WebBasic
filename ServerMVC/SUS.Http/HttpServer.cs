@@ -40,8 +40,34 @@
         {
             using (NetworkStream stream = tcpClient.GetStream())
             {
-                await stream.ReadAsync();
-                await stream.WriteAsync();
+                //TODO: research if there is faster data structure for array of bytes?
+                List<byte> data = new List<byte>();
+                int position = 0;
+                byte[] buffer = new byte[4096];
+                while (true)
+                {
+                    int count = await stream.ReadAsync(buffer, position, buffer.Length);
+                    position += count;
+
+                    if (count < buffer.Length)
+                    {
+                        var partialBuffer = new byte[count];
+                        Array.Copy(buffer, partialBuffer, count);
+                        data.AddRange(partialBuffer);
+                    }
+                    else
+                    {
+                        data.AddRange(buffer);
+                    }
+
+                    if (count == 0)
+                    {
+                        break;
+                    }
+                }
+
+
+                //await stream.WriteAsync();
             }
         }
     }
