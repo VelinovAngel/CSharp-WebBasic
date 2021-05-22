@@ -38,10 +38,11 @@
 
         private async Task ProcessClientAsync(TcpClient tcpClient)
         {
-            //TODO: using
-            NetworkStream stream = tcpClient.GetStream();
-            await stream.ReadAsync();
-            await stream.WriteAsync();
+            using (NetworkStream stream = tcpClient.GetStream())
+            {
+                await stream.ReadAsync();
+                await stream.WriteAsync();
+            }
         }
     }
 }
