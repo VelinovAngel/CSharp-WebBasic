@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SUS.Http;
+using SUS.Http.Contracts;
+using System;
 
 namespace MyFirstMvcApp
 {
@@ -6,12 +8,9 @@ namespace MyFirstMvcApp
     {
         static void Main(string[] args)
         {
-            var server = new HttpServer();
-           
+            IHttpServer server = new HttpServer();     
             server.AddRoute("/", HomePage);
-
             server.AddRoute("/about", About);
-
             server.AddRoute("/user/login", Login);
 
             server.Start(80);
@@ -19,17 +18,17 @@ namespace MyFirstMvcApp
 
         static HttpResponse HomePage(HttpRequest request)
         {
-
+            throw new NotImplementedException();
         }
 
         static HttpResponse About(HttpRequest request)
         {
-
+            throw new NotImplementedException();
         }
 
         static HttpResponse Login(HttpRequest request)
         {
-
+            throw new NotImplementedException();
         }
     }
 }
