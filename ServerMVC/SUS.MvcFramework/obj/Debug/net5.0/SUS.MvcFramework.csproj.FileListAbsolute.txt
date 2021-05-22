@@ -1,0 +1,12 @@
+C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\ServerMVC\SUS.MvcFramework\bin\Debug\net5.0\SUS.MvcFramework.deps.json
+C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\ServerMVC\SUS.MvcFramework\bin\Debug\net5.0\SUS.MvcFramework.dll
+C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\ServerMVC\SUS.MvcFramework\bin\Debug\net5.0\ref\SUS.MvcFramework.dll
+C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\ServerMVC\SUS.MvcFramework\bin\Debug\net5.0\SUS.MvcFramework.pdb
+C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\ServerMVC\SUS.MvcFramework\obj\Debug\net5.0\SUS.MvcFramework.csprojAssemblyReference.cache
+C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\ServerMVC\SUS.MvcFramework\obj\Debug\net5.0\SUS.MvcFramework.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\ServerMVC\SUS.MvcFramework\obj\Debug\net5.0\SUS.MvcFramework.AssemblyInfoInputs.cache
+C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\ServerMVC\SUS.MvcFramework\obj\Debug\net5.0\SUS.MvcFramework.AssemblyInfo.cs
+C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\ServerMVC\SUS.MvcFramework\obj\Debug\net5.0\SUS.MvcFramework.csproj.CoreCompileInputs.cache
+C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\ServerMVC\SUS.MvcFramework\obj\Debug\net5.0\SUS.MvcFramework.dll
+C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\ServerMVC\SUS.MvcFramework\obj\Debug\net5.0\ref\SUS.MvcFramework.dll
+C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\ServerMVC\SUS.MvcFramework\obj\Debug\net5.0\SUS.MvcFramework.pdb

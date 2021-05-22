@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SUS.Http
+﻿namespace SUS.Http
 {
-    class HttpRequest
+    public class HttpRequest
     {
     }
 }

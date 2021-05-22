@@ -1,19 +1,20 @@
-﻿using SUS.Http;
-using SUS.Http.Contracts;
-using System;
-
-namespace MyFirstMvcApp
+﻿namespace MyFirstMvcApp
 {
+    using System;
+    using System.Threading.Tasks;
+    using SUS.Http;
+    using SUS.Http.Contracts;
+
+
     class Program
     {
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
             IHttpServer server = new HttpServer();     
             server.AddRoute("/", HomePage);
             server.AddRoute("/about", About);
             server.AddRoute("/user/login", Login);
-
-            server.Start(80);
+            await server.StartAsync(80);
         }
 
         static HttpResponse HomePage(HttpRequest request)
