@@ -9,6 +9,7 @@
 
     using SUS.Http.Contracts;
     using SUS.Http.GlobalConstans;
+    using System.Linq;
 
     public class HttpServer : IHttpServer
     {
@@ -68,10 +69,12 @@
                 // byte[] => string (text)
                 var requestAsString = Encoding.UTF8.GetString(data.ToArray());
 
+                var request = new HttpRequest(requestAsString);
+
                 Console.WriteLine(requestAsString);
                 //TODO: extract info requestAsString
 
-                var responseHtml = "<h1>Wellcome</h1>";
+                var responseHtml = "<h1>Wellcome</h1>" + request.Headers.FirstOrDefault(x => x.Name == "User-Agent")?.Value;
                 var responseBodyBytes = Encoding.UTF8.GetBytes(responseHtml);
 
                 var responseHttp = "HTTP/1.1 200 OK" + HttpConstans.NewLine +

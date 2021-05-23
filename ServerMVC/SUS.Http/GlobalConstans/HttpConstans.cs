@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SUS.Http.GlobalConstans
+﻿namespace SUS.Http.GlobalConstans
 {
-    class HttpConstans
+    public static class HttpConstans
     {
+        public const int BufferSize = 4096;
+        public const string NewLine = "\r\n";
+
     }
 }
