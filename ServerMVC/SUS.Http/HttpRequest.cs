@@ -48,7 +48,7 @@
                 }
             }
 
-            if ( this.Headers.Any(x=>x.Name == HttpConstans.RequestCookieHeader))
+            if (this.Headers.Any(x => x.Name == HttpConstans.RequestCookieHeader))
             {
                 var cookiesAsString = this.Headers.FirstOrDefault(x => x.Name == HttpConstans.RequestCookieHeader).Value;
                 var cookies = cookiesAsString.Split("; ", StringSplitOptions.RemoveEmptyEntries);
@@ -57,7 +57,7 @@
                 {
                     this.Cookies.Add(new Cookie(cookieAsString));
                 }
-
+                
             }
 
             this.Body = bodyBuilder.ToString().TrimEnd();
