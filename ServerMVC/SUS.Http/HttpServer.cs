@@ -42,53 +42,62 @@
 
         private async Task ProcessClientAsync(TcpClient tcpClient)
         {
-            using (NetworkStream stream = tcpClient.GetStream())
+            try
             {
-                //TODO: research if there is faster data structure for array of bytes?
-                List<byte> data = new List<byte>();
-                int position = 0;
-                byte[] buffer = new byte[HttpConstans.BufferSize];
-                while (true)
+                using (NetworkStream stream = tcpClient.GetStream())
                 {
-                    int count = await stream.ReadAsync(buffer, position, buffer.Length);
-                    position += count;
+                    //TODO: research if there is faster data structure for array of bytes?
+                    List<byte> data = new List<byte>();
+                    int position = 0;
+                    byte[] buffer = new byte[HttpConstans.BufferSize];
+                    while (true)
+                    {
+                        int count = await stream.ReadAsync(buffer, position, buffer.Length);
+                        position += count;
 
-                    if (count < buffer.Length)
-                    {
-                        var partialBuffer = new byte[count];
-                        Array.Copy(buffer, partialBuffer, count);
-                        data.AddRange(partialBuffer);
-                        break;
+                        if (count < buffer.Length)
+                        {
+                            var partialBuffer = new byte[count];
+                            Array.Copy(buffer, partialBuffer, count);
+                            data.AddRange(partialBuffer);
+                            break;
+                        }
+                        else
+                        {
+                            data.AddRange(buffer);
+                        }
                     }
-                    else
-                    {
-                        data.AddRange(buffer);
-                    }
+
+                    // byte[] => string (text)
+                    var requestAsString = Encoding.UTF8.GetString(data.ToArray());
+
+                    var request = new HttpRequest(requestAsString);
+
+                    Console.WriteLine(requestAsString);
+                    //TODO: extract info requestAsString
+
+                    var responseHtml = "<h1>Wellcome</h1>" + request.Headers.FirstOrDefault(x => x.Name == "User-Agent")?.Value;
+                    var responseBodyBytes = Encoding.UTF8.GetBytes(responseHtml);
+
+                    var responseHttp = "HTTP/1.1 200 OK" + HttpConstans.NewLine +
+                        "Server: SoftUniServer 1.0" + HttpConstans.NewLine +
+                        "Content-Type: text/html" + HttpConstans.NewLine +
+                        "Content-Length: " + responseBodyBytes.Length + HttpConstans.NewLine + HttpConstans.NewLine;
+
+                    var responseHeaderBytes = Encoding.UTF8.GetBytes(responseHttp);
+
+                    await stream.WriteAsync(responseHeaderBytes);
+                    await stream.WriteAsync(responseBodyBytes);
                 }
 
-                // byte[] => string (text)
-                var requestAsString = Encoding.UTF8.GetString(data.ToArray());
+                tcpClient.Close();
 
-                var request = new HttpRequest(requestAsString);
-
-                Console.WriteLine(requestAsString);
-                //TODO: extract info requestAsString
-
-                var responseHtml = "<h1>Wellcome</h1>" + request.Headers.FirstOrDefault(x => x.Name == "User-Agent")?.Value;
-                var responseBodyBytes = Encoding.UTF8.GetBytes(responseHtml);
-
-                var responseHttp = "HTTP/1.1 200 OK" + HttpConstans.NewLine +
-                    "Server: SoftUniServer 1.0" + HttpConstans.NewLine +
-                    "Content-Type: text/html" + HttpConstans.NewLine +
-                    "Content-Lenght: " + responseBodyBytes.Length + HttpConstans.NewLine + HttpConstans.NewLine;
-
-                var responseHeaderBytes = Encoding.UTF8.GetBytes(responseHttp);
-
-                await stream.WriteAsync(responseHeaderBytes);
-                await stream.WriteAsync(responseBodyBytes);
             }
+            catch (Exception ex)
+            {
 
-            tcpClient.Close();
+                Console.WriteLine(ex);
+            }
         }
     }
 }
