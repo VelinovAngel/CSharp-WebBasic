@@ -11,9 +11,11 @@
 
     public class HttpServer : IHttpServer
     {
+        private const int BufferSize = 4096;
+
         IDictionary<string, Func<HttpRequest, HttpResponse>>
             routeTable = new Dictionary<string, Func<HttpRequest, HttpResponse>>();
-        public void AddRoute(string path, System.Func<HttpRequest, HttpResponse> action)
+        public void AddRoute(string path, Func<HttpRequest, HttpResponse> action)
         {
             if (routeTable.ContainsKey(path))
             {
@@ -44,7 +46,7 @@
                 //TODO: research if there is faster data structure for array of bytes?
                 List<byte> data = new List<byte>();
                 int position = 0;
-                byte[] buffer = new byte[4096];
+                byte[] buffer = new byte[BufferSize];
                 while (true)
                 {
                     int count = await stream.ReadAsync(buffer, position, buffer.Length);
@@ -65,6 +67,7 @@
 
                 // byte[] => string (text)
                 var requestAsString = Encoding.UTF8.GetString(data.ToArray());
+
                 Console.WriteLine(requestAsString); ;
                 //await stream.WriteAsync();
             }
