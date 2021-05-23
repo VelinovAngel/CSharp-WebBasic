@@ -7,6 +7,7 @@
 
     using SUS.Http.Contracts;
     using System.Threading.Tasks;
+    using System.Text;
 
     public class HttpServer : IHttpServer
     {
@@ -62,7 +63,9 @@
                     }
                 }
 
-
+                // byte[] => string (text)
+                var requestAsString = Encoding.UTF8.GetString(data.ToArray());
+                Console.WriteLine(requestAsString); ;
                 //await stream.WriteAsync();
             }
         }
