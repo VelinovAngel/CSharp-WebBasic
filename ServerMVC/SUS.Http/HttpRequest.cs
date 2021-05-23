@@ -6,6 +6,7 @@
 
     using SUS.Http.Enums;
     using SUS.Http.GlobalConstans;
+    using System.Linq;
 
     public class HttpRequest
     {
@@ -19,7 +20,7 @@
 
             var headerLine = lines[0];
             var headerLineParts = headerLine.Split(' ');
-            this.Method = (HttpMethod)Enum.Parse(typeof(HttpMethod), headerLineParts[0]);
+            this.Method = (HttpMethod)Enum.Parse(typeof(HttpMethod), headerLineParts[0], true);
             this.Path = headerLineParts[1];
 
             int lineIndex = 1;
@@ -46,6 +47,19 @@
                     bodyBuilder.AppendLine(line);
                 }
             }
+
+            if ( this.Headers.Any(x=>x.Name == HttpConstans.RequestCookieHeader))
+            {
+                var cookiesAsString = this.Headers.FirstOrDefault(x => x.Name == HttpConstans.RequestCookieHeader).Value;
+                var cookies = cookiesAsString.Split("; ", StringSplitOptions.RemoveEmptyEntries);
+
+                foreach (var cookieAsString in cookies)
+                {
+                    this.Cookies.Add(new Cookie(cookieAsString));
+                }
+
+            }
+
             this.Body = bodyBuilder.ToString().TrimEnd();
         }
 
@@ -53,9 +67,9 @@
 
         public HttpMethod Method { get; set; }
 
-        public List<Header> Headers { get; set; }
+        public ICollection<Header> Headers { get; set; }
 
-        public List<Cookie> Cookies { get; set; }
+        public ICollection<Cookie> Cookies { get; set; }
 
         public string Body { get; set; }
     }
