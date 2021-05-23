@@ -1,8 +1,10 @@
 ﻿namespace SUS.Http
 {
     using System;
-    using System.Collections.Generic;
     using System.Text;
+    using System.Collections.Generic;
+
+    using SUS.Http.Enums;
     using SUS.Http.GlobalConstans;
 
     public class HttpRequest
@@ -17,7 +19,7 @@
 
             var headerLine = lines[0];
             var headerLineParts = headerLine.Split(' ');
-            this.Method = headerLineParts[0];
+            this.Method = (HttpMethod)Enum.Parse(typeof(HttpMethod), headerLineParts[0]);
             this.Path = headerLineParts[1];
 
             int lineIndex = 1;
@@ -49,7 +51,7 @@
 
         public string Path { get; set; }
 
-        public string Method { get; set; }
+        public HttpMethod Method { get; set; }
 
         public List<Header> Headers { get; set; }
 
