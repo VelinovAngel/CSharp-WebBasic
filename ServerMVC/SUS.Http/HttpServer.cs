@@ -8,12 +8,10 @@
     using System.Collections.Generic;
 
     using SUS.Http.Contracts;
+    using SUS.Http.GlobalConstans;
 
     public class HttpServer : IHttpServer
     {
-        private const int BufferSize = 4096;
-        private const string NewLine = "\r\n";
-
         IDictionary<string, Func<HttpRequest, HttpResponse>>
             routeTable = new Dictionary<string, Func<HttpRequest, HttpResponse>>();
 
@@ -48,7 +46,7 @@
                 //TODO: research if there is faster data structure for array of bytes?
                 List<byte> data = new List<byte>();
                 int position = 0;
-                byte[] buffer = new byte[BufferSize];
+                byte[] buffer = new byte[HttpConstans.BufferSize];
                 while (true)
                 {
                     int count = await stream.ReadAsync(buffer, position, buffer.Length);
@@ -76,10 +74,10 @@
                 var responseHtml = "<h1>Wellcome</h1>";
                 var responseBodyBytes = Encoding.UTF8.GetBytes(responseHtml);
 
-                var responseHttp = "HTTP/1.1 200 OK" + NewLine +
-                    "Server: SoftUniServer 1.0" + NewLine +
-                    "Content-Type: text/html" + NewLine +
-                    "Content-Lenght: " + responseBodyBytes.Length + NewLine + NewLine;
+                var responseHttp = "HTTP/1.1 200 OK" + HttpConstans.NewLine +
+                    "Server: SoftUniServer 1.0" + HttpConstans.NewLine +
+                    "Content-Type: text/html" + HttpConstans.NewLine +
+                    "Content-Lenght: " + responseBodyBytes.Length + HttpConstans.NewLine + HttpConstans.NewLine;
 
                 var responseHeaderBytes = Encoding.UTF8.GetBytes(responseHttp);
 

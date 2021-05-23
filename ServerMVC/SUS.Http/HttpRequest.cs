@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
-
-namespace SUS.Http
+﻿namespace SUS.Http
 {
+    using System.Collections.Generic;
+
     public class HttpRequest
     {
 
