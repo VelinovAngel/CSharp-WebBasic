@@ -2,19 +2,21 @@
 {
     using System;
     using System.Net;
+    using System.Text;
     using System.Net.Sockets;
+    using System.Threading.Tasks;
     using System.Collections.Generic;
 
     using SUS.Http.Contracts;
-    using System.Threading.Tasks;
-    using System.Text;
 
     public class HttpServer : IHttpServer
     {
         private const int BufferSize = 4096;
+        private const string NewLine = "\r\n";
 
         IDictionary<string, Func<HttpRequest, HttpResponse>>
             routeTable = new Dictionary<string, Func<HttpRequest, HttpResponse>>();
+
         public void AddRoute(string path, Func<HttpRequest, HttpResponse> action)
         {
             if (routeTable.ContainsKey(path))
@@ -68,9 +70,24 @@
                 // byte[] => string (text)
                 var requestAsString = Encoding.UTF8.GetString(data.ToArray());
 
-                Console.WriteLine(requestAsString); ;
-                //await stream.WriteAsync();
+                Console.WriteLine(requestAsString);
+                //TODO: extract info requestAsString
+
+                var responseHtml = "<h1>Wellcome</h1>";
+                var responseBodyBytes = Encoding.UTF8.GetBytes(responseHtml);
+
+                var responseHttp = "HTTP/1.1 200 OK" + NewLine +
+                    "Server: SoftUniServer 1.0" + NewLine +
+                    "Content-Type: text/html" + NewLine +
+                    "Content-Lenght: " + responseBodyBytes.Length + NewLine + NewLine;
+
+                var responseHeaderBytes = Encoding.UTF8.GetBytes(responseHttp);
+
+                await stream.WriteAsync(responseHeaderBytes);
+                await stream.WriteAsync(responseBodyBytes);
             }
+
+            tcpClient.Close();
         }
     }
 }

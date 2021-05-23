@@ -2,6 +2,7 @@
 {
     using System;
     using System.Threading.Tasks;
+
     using SUS.Http;
     using SUS.Http.Contracts;
 
@@ -12,12 +13,18 @@
         {
             IHttpServer server = new HttpServer();     
             server.AddRoute("/", HomePage);
+            server.AddRoute("/favicon.ico", Favicon);
             server.AddRoute("/about", About);
             server.AddRoute("/user/login", Login);
             await server.StartAsync(80);
         }
 
         static HttpResponse HomePage(HttpRequest request)
+        {
+            throw new NotImplementedException();
+        }
+
+        static HttpResponse Favicon(HttpRequest request)
         {
             throw new NotImplementedException();
         }
