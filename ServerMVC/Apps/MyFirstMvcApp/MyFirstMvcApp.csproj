@@ -9,4 +9,10 @@
     <ProjectReference Include="..\..\SUS.Http\SUS.Http.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="wwwroot\favicon.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

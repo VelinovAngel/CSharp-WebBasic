@@ -75,20 +75,27 @@
                     Console.WriteLine($"{request.Method} {request.Path} => {request.Headers.Count} headers");
                     //TODO: extract info requestAsString
 
-                    var responseHtml = "<h1>Wellcome!</h1>" + request.Headers.FirstOrDefault(x => x.Name == "User-Agent")?.Value;
-                    var responseBodyBytes = Encoding.UTF8.GetBytes(responseHtml);
-                    var response = new HttpResponse("text/html", responseBodyBytes);
-                    response.Headers.Add(new Header("Server", "SoftUniServer 1.0"));
-                    response.Cookies.Add(new ResponseCookie("sid", Guid.NewGuid().ToString())
-                    { HttpOnly = true, MaxAge = 60 * 24 * 60 * 60 });
+                    HttpResponse response;
+                    if (this.routeTable.ContainsKey(request.Path))
+                    {
+                        var action = this.routeTable[request.Path];
+                        response = action(request);
+                    }
+                    else
+                    {
+                        //Not found 404
+                        response = new HttpResponse("text/html", new byte[0], (Enums.HttpStatusCode)HttpStatusCode.NotFound);
+                    }
 
                     //var responseHttp = "HTTP/1.1 200 OK" + HttpConstans.NewLine +
                     //    "Server: SoftUniServer 1.0" + HttpConstans.NewLine +
                     //    "Content-Type: text/html" + HttpConstans.NewLine +
                     //    "Content-Length: " + responseBodyBytes.Length + HttpConstans.NewLine + HttpConstans.NewLine;
 
+                    response.Headers.Add(new Header("Server", "SoftUniServer 1.0"));
+                    response.Cookies.Add(new ResponseCookie("sid", Guid.NewGuid().ToString())
+                    { HttpOnly = true, MaxAge = 60 * 24 * 60 * 60 });
                     var responseHeaderBytes = Encoding.UTF8.GetBytes(response.ToString());
-
                     await stream.WriteAsync(responseHeaderBytes, 0, responseHeaderBytes.Length);
                     await stream.WriteAsync(response.Body, 0, response.Body.Length);
                 }

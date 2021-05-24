@@ -17,3 +17,4 @@ C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\ServerMVC\Apps\MyFirst
 C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\ServerMVC\Apps\MyFirstMvcApp\obj\Debug\net5.0\ref\MyFirstMvcApp.dll
 C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\ServerMVC\Apps\MyFirstMvcApp\obj\Debug\net5.0\MyFirstMvcApp.pdb
 C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\ServerMVC\Apps\MyFirstMvcApp\obj\Debug\net5.0\MyFirstMvcApp.genruntimeconfig.cache
+C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\ServerMVC\Apps\MyFirstMvcApp\bin\Debug\net5.0\wwwroot\favicon.ico
