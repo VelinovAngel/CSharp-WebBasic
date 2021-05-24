@@ -60,9 +60,9 @@
                 
             }
 
-            this.Body = bodyBuilder.ToString().TrimEnd();
+            this.Body = bodyBuilder.ToString();
         }
-
+        
         public string Path { get; set; }
 
         public HttpMethod Method { get; set; }

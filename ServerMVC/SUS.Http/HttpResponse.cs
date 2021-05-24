@@ -22,9 +22,9 @@
 
         }
 
-        public byte[] Body { get; set; }
         public HttpStatusCode StatusCode { get; set; }
         public ICollection<Header> Headers { get; set; }
+        public byte[] Body { get; set; }
 
         public override string ToString()
         {
@@ -37,7 +37,7 @@
             }
             responseBuilder.Append(HttpConstans.NewLine);
 
-            return responseBuilder.ToString().TrimEnd();
+            return responseBuilder.ToString();
         }
 
     }
