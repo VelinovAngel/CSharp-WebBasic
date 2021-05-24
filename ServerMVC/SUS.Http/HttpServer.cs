@@ -79,6 +79,8 @@
                     var responseBodyBytes = Encoding.UTF8.GetBytes(responseHtml);
                     var response = new HttpResponse("text/html", responseBodyBytes);
                     response.Headers.Add(new Header("Server", "SoftUniServer 1.0"));
+                    response.Cookies.Add(new ResponseCookie("sid", Guid.NewGuid().ToString())
+                    { HttpOnly = true, MaxAge = 60 * 24 * 60 * 60 });
 
                     //var responseHttp = "HTTP/1.1 200 OK" + HttpConstans.NewLine +
                     //    "Server: SoftUniServer 1.0" + HttpConstans.NewLine +

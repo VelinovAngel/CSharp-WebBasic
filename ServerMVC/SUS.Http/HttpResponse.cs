@@ -10,20 +10,25 @@
     {
         public HttpResponse(string contentType, byte[] body, HttpStatusCode statusCode = HttpStatusCode.Ok)
         {
+            if (body == null)
+            {
+                throw new ArgumentNullException(nameof(body));
+            }
+
             this.StatusCode = statusCode;
             this.Body = body;
             this.Headers = new List<Header>
             {
                 {new Header ("Content-Type", contentType) },
                 {new Header("Contente-Length", body.Length.ToString()) }
-
             };
-
+            this.Cookies = new List<Cookie>();
 
         }
 
         public HttpStatusCode StatusCode { get; set; }
         public ICollection<Header> Headers { get; set; }
+        public ICollection<Cookie> Cookies { get; set; }
         public byte[] Body { get; set; }
 
         public override string ToString()
@@ -35,6 +40,12 @@
             {
                 responseBuilder.Append(header.ToString() + HttpConstans.NewLine);
             }
+
+            foreach (var cookie in this.Cookies)
+            {
+                responseBuilder.Append("Set-Cookie: " + cookie.ToString() + HttpConstans.NewLine);
+            }
+
             responseBuilder.Append(HttpConstans.NewLine);
 
             return responseBuilder.ToString();

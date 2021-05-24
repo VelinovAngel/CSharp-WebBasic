@@ -3,6 +3,11 @@
     using System;
     public class Cookie
     {
+        public Cookie(string name, string value)
+        {
+            this.Name = name;
+            this.Value = value;
+        }
         public Cookie(string cookieAsString)
         {
             var cookieParts = cookieAsString.Split('=', 2);
