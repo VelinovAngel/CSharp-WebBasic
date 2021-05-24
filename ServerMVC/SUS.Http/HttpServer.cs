@@ -70,19 +70,20 @@
 
                     // byte[] => string (text)
                     var requestAsString = Encoding.UTF8.GetString(data.ToArray());
-
                     var request = new HttpRequest(requestAsString);
 
-                    Console.WriteLine(requestAsString);
+                    Console.WriteLine($"{request.Method} {request.Path} => {request.Headers.Count} headers");
                     //TODO: extract info requestAsString
 
                     var responseHtml = "<h1>Wellcome</h1>" + request.Headers.FirstOrDefault(x => x.Name == "User-Agent")?.Value;
                     var responseBodyBytes = Encoding.UTF8.GetBytes(responseHtml);
+                    var response = new HttpResponse("text/html", responseBodyBytes);
+                    response.Headers.Add(new Header("Server:", "SoftUniServer 1.0"));
 
-                    var responseHttp = "HTTP/1.1 200 OK" + HttpConstans.NewLine +
-                        "Server: SoftUniServer 1.0" + HttpConstans.NewLine +
-                        "Content-Type: text/html" + HttpConstans.NewLine +
-                        "Content-Length: " + responseBodyBytes.Length + HttpConstans.NewLine + HttpConstans.NewLine;
+                    //var responseHttp = "HTTP/1.1 200 OK" + HttpConstans.NewLine +
+                    //    "Server: SoftUniServer 1.0" + HttpConstans.NewLine +
+                    //    "Content-Type: text/html" + HttpConstans.NewLine +
+                    //    "Content-Length: " + responseBodyBytes.Length + HttpConstans.NewLine + HttpConstans.NewLine;
 
                     var responseHeaderBytes = Encoding.UTF8.GetBytes(responseHttp);
 

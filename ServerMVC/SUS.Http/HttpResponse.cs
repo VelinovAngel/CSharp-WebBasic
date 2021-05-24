@@ -35,6 +35,8 @@
             {
                 responseBuilder.Append(header.ToString() + HttpConstans.NewLine);
             }
+            responseBuilder.Append(HttpConstans.NewLine);
+
             return responseBuilder.ToString().TrimEnd();
         }
 
