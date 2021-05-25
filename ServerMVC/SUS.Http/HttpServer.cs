@@ -96,7 +96,6 @@
                 }
 
                 tcpClient.Close();
-
             }
             catch (Exception ex)
             {
