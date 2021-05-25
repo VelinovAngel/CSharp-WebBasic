@@ -87,11 +87,6 @@
                         response = new HttpResponse("text/html", new byte[0], (Enums.HttpStatusCode)HttpStatusCode.NotFound);
                     }
 
-                    //var responseHttp = "HTTP/1.1 200 OK" + HttpConstans.NewLine +
-                    //    "Server: SoftUniServer 1.0" + HttpConstans.NewLine +
-                    //    "Content-Type: text/html" + HttpConstans.NewLine +
-                    //    "Content-Length: " + responseBodyBytes.Length + HttpConstans.NewLine + HttpConstans.NewLine;
-
                     response.Headers.Add(new Header("Server", "SoftUniServer 1.0"));
                     response.Cookies.Add(new ResponseCookie("sid", Guid.NewGuid().ToString())
                     { HttpOnly = true, MaxAge = 60 * 24 * 60 * 60 });
