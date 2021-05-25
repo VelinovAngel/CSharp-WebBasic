@@ -8,7 +8,6 @@
     using SUS.Http;
     using SUS.Http.Contracts;
 
-
     class Program
     {
         static async Task Main(string[] args)
