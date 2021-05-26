@@ -21,12 +21,5 @@
             //Process.Start("chrome.exe", "http://localhost/");
             await server.StartAsync(80);
         }
-
-
-
-
-
-
-
     }
 }

@@ -1,11 +1,13 @@
 ﻿namespace MyFirstMvcApp.Controllers
 {
-    using SUS.Http;
     using System.Linq;
     using System.Text;
 
+    using SUS.Http;
+    using SUS.MvcFramework;
 
-    public class UsersController
+
+    public class UsersController : Controller
     {
         public HttpResponse Login(HttpRequest request)
         {
