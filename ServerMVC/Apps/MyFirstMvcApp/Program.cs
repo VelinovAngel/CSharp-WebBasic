@@ -1,8 +1,10 @@
 ﻿namespace MyFirstMvcApp
 {
     using System.Threading.Tasks;
+    using System.Collections.Generic;
 
     using SUS.Http;
+    using SUS.MvcFramework;
     using SUS.Http.Contracts;
     using MyFirstMvcApp.Controllers;
 
@@ -10,16 +12,16 @@
     {
         static async Task Main(string[] args)
         {
-            IHttpServer server = new HttpServer();
-            server.AddRoute("/", new HomeController().Index);
-            server.AddRoute("/favicon.ico", new StaticFileController().Favicon);
-            server.AddRoute("/about", new HomeController().About);
-            server.AddRoute("/users/login", new UsersController().Login);
-            server.AddRoute("/users/register", new UsersController().Register);
+            List<Route> routeTable = new List<Route>();
+            routeTable.Add(new Route("/", new HomeController().Index));
+            routeTable.Add(new Route("/favicon.ico", new StaticFileController().Favicon));
+            routeTable.Add(new Route("/Users/Login", new UsersController().Login));
+            routeTable.Add(new Route("/Users/Register", new UsersController().Register));
+            routeTable.Add(new Route("/Cards/Add", new CardsController().Add));
+            routeTable.Add(new Route("/Cards/Collection", new CardsController().All));
+            routeTable.Add(new Route("/Cards/All", new CardsController().Collection));
 
-            /*Set default browser to open localhost*/
-            //Process.Start("chrome.exe", "http://localhost/");
-            await server.StartAsync(80);
+            await Host.CreateHostAsync(routeTable, 80);
         }
     }
 }
