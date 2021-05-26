@@ -17,11 +17,21 @@
             server.AddRoute("/", HomePage);
             server.AddRoute("/favicon.ico", Favicon);
             server.AddRoute("/about", About);
-            server.AddRoute("/login", Login);
+            server.AddRoute("/users/login", Login);
+            server.AddRoute("/users/register", Register);
 
             /*Set default browser to open localhost*/
             //Process.Start("chrome.exe", "http://localhost/");
             await server.StartAsync(80);
+        }
+
+        static HttpResponse Register(HttpRequest request)
+        {
+            var responseHtml = "<h1>Register!</h1>" + request.Headers.FirstOrDefault(x => x.Name == "User-Agent")?.Value;
+            var responseBodyBytes = Encoding.UTF8.GetBytes(responseHtml);
+            var response = new HttpResponse("text/html", responseBodyBytes);
+
+            return response;
         }
 
         static HttpResponse HomePage(HttpRequest request)
