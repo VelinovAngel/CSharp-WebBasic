@@ -1,5 +1,6 @@
 ﻿namespace MyFirstMvcApp
 {
+    using System.Diagnostics;
     using System.IO;
     using System.Linq;
     using System.Text;
@@ -17,6 +18,9 @@
             server.AddRoute("/favicon.ico", Favicon);
             server.AddRoute("/about", About);
             server.AddRoute("/login", Login);
+
+            /*Set default browser to open localhost*/
+            //Process.Start("chrome.exe", "http://localhost/");
             await server.StartAsync(80);
         }
 
