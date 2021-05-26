@@ -1,9 +1,10 @@
 ﻿namespace MyFirstMvcApp.Controllers
 {
     using SUS.Http;
+    using SUS.MvcFramework;
     using System.IO;
 
-    public class StaticFileController
+    public class StaticFileController : Controller
     {
         public HttpResponse Favicon(HttpRequest request)
         {

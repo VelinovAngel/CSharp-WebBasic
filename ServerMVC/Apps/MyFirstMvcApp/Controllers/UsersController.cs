@@ -1,5 +1,6 @@
 ﻿namespace MyFirstMvcApp.Controllers
 {
+    using System.IO;
     using System.Linq;
     using System.Text;
 
@@ -20,7 +21,7 @@
 
         public HttpResponse Register(HttpRequest request)
         {
-            var responseHtml = "<h1>Register!</h1>" + request.Headers.FirstOrDefault(x => x.Name == "User-Agent")?.Value;
+            var responseHtml = File.ReadAllText("Views/Users/Register.html");
             var responseBodyBytes = Encoding.UTF8.GetBytes(responseHtml);
             var response = new HttpResponse("text/html", responseBodyBytes);
 

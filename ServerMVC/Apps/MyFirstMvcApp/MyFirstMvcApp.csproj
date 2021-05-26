@@ -7,12 +7,21 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\SUS.Http\SUS.Http.csproj" />
+    <ProjectReference Include="..\..\SUS.MvcFramework\SUS.MvcFramework.csproj" />
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="Views\Users\Register.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="wwwroot\favicon.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Views\Home\" />
+    <Folder Include="Views\Cards\" />
   </ItemGroup>
 
 </Project>

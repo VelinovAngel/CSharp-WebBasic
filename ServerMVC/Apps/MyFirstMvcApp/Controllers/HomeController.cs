@@ -4,8 +4,9 @@
     using System.Text;
 
     using SUS.Http;
+    using SUS.MvcFramework;
 
-    public class HomeController
+    public class HomeController : Controller
     {
         public HttpResponse Index(HttpRequest request)
         {

@@ -18,3 +18,6 @@ C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\ServerMVC\Apps\MyFirst
 C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\ServerMVC\Apps\MyFirstMvcApp\obj\Debug\net5.0\MyFirstMvcApp.pdb
 C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\ServerMVC\Apps\MyFirstMvcApp\obj\Debug\net5.0\MyFirstMvcApp.genruntimeconfig.cache
 C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\ServerMVC\Apps\MyFirstMvcApp\bin\Debug\net5.0\wwwroot\favicon.ico
+C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\ServerMVC\Apps\MyFirstMvcApp\bin\Debug\net5.0\Views\Users\Register.html
+C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\ServerMVC\Apps\MyFirstMvcApp\bin\Debug\net5.0\SUS.MvcFramework.dll
+C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\ServerMVC\Apps\MyFirstMvcApp\bin\Debug\net5.0\SUS.MvcFramework.pdb

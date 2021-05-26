@@ -8,7 +8,8 @@
     ".NETCoreApp,Version=v5.0": {
       "MyFirstMvcApp/1.0.0": {
         "dependencies": {
-          "SUS.Http": "1.0.0"
+          "SUS.Http": "1.0.0",
+          "SUS.MvcFramework": "1.0.0"
         },
         "runtime": {
           "MyFirstMvcApp.dll": {}
@@ -17,6 +18,11 @@
       "SUS.Http/1.0.0": {
         "runtime": {
           "SUS.Http.dll": {}
+        }
+      },
+      "SUS.MvcFramework/1.0.0": {
+        "runtime": {
+          "SUS.MvcFramework.dll": {}
         }
       }
     }
@@ -28,6 +34,11 @@
       "sha512": ""
     },
     "SUS.Http/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SUS.MvcFramework/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
