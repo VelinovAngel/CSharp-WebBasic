@@ -8,12 +8,12 @@
     {
         public HttpResponse Login(HttpRequest request)
         {
-            return this.View("Views/Users/Login.html");
+            return this.View();
         }
 
         public HttpResponse Register(HttpRequest request)
         {
-            return this.View("Views/Users/Register.html");
+            return this.View();
         }
     }
 }
