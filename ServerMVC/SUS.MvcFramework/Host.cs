@@ -10,12 +10,8 @@
     {
         public static async Task CreateHostAsync(List<Route> routesTable, int port = 80)
         {
-            IHttpServer server = new HttpServer();
+            IHttpServer server = new HttpServer(routesTable);
 
-            foreach (var route in routesTable)
-            {
-                server.AddRoute(route.Path, route.Action);
-            }
             /*Set default browser to open localhost*/
             //Process.Start("chrome.exe", "http://localhost/");
             await server.StartAsync(port);

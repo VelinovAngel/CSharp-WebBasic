@@ -1,12 +1,8 @@
-﻿using SUS.Http;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SUS.MvcFramework
+﻿namespace SUS.Http
 {
+    using System;
+
+
     public class Route
     {
         public Route(string path, Func<HttpRequest, HttpResponse> action)
