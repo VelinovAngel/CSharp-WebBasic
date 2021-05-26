@@ -3,9 +3,7 @@
     using System.Threading.Tasks;
     using System.Collections.Generic;
 
-    using SUS.Http;
     using SUS.MvcFramework;
-    using SUS.Http.Contracts;
     using MyFirstMvcApp.Controllers;
 
     class Program

@@ -1,8 +1,9 @@
 ﻿namespace MyFirstMvcApp.Controllers
 {
+    using System.IO;
+
     using SUS.Http;
     using SUS.MvcFramework;
-    using System.IO;
 
     public class StaticFileController : Controller
     {
