@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net5.0": {}
+    "net5.0": {
+      "SUS.Http/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/SUS.Http.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SUS.Http.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "SUS.Http/1.0.0": {
+      "type": "project",
+      "path": "../SUS.Http/SUS.Http.csproj",
+      "msbuildProject": "../SUS.Http/SUS.Http.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net5.0": []
+    "net5.0": [
+      "SUS.Http >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\nik_w\\.nuget\\packages\\": {}
@@ -33,7 +52,11 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\nik_w\\OneDrive\\Desktop\\SoftUni\\Git\\C# Web Basics\\ServerMVC\\SUS.Http\\SUS.Http.csproj": {
+              "projectPath": "C:\\Users\\nik_w\\OneDrive\\Desktop\\SoftUni\\Git\\C# Web Basics\\ServerMVC\\SUS.Http\\SUS.Http.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

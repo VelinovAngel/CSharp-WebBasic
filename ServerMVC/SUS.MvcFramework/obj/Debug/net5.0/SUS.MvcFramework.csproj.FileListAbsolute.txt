@@ -10,3 +10,6 @@ C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\ServerMVC\SUS.MvcFrame
 C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\ServerMVC\SUS.MvcFramework\obj\Debug\net5.0\SUS.MvcFramework.dll
 C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\ServerMVC\SUS.MvcFramework\obj\Debug\net5.0\ref\SUS.MvcFramework.dll
 C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\ServerMVC\SUS.MvcFramework\obj\Debug\net5.0\SUS.MvcFramework.pdb
+C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\ServerMVC\SUS.MvcFramework\bin\Debug\net5.0\SUS.Http.dll
+C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\ServerMVC\SUS.MvcFramework\bin\Debug\net5.0\SUS.Http.pdb
+C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\ServerMVC\SUS.MvcFramework\obj\Debug\net5.0\SUS.MvcFramework.csproj.CopyComplete

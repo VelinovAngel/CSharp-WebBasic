@@ -142,7 +142,11 @@
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\nik_w\\OneDrive\\Desktop\\SoftUni\\Git\\C# Web Basics\\ServerMVC\\SUS.Http\\SUS.Http.csproj": {
+                "projectPath": "C:\\Users\\nik_w\\OneDrive\\Desktop\\SoftUni\\Git\\C# Web Basics\\ServerMVC\\SUS.Http\\SUS.Http.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

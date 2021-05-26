@@ -21,3 +21,5 @@ C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\ServerMVC\Apps\MyFirst
 C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\ServerMVC\Apps\MyFirstMvcApp\bin\Debug\net5.0\Views\Users\Register.html
 C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\ServerMVC\Apps\MyFirstMvcApp\bin\Debug\net5.0\SUS.MvcFramework.dll
 C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\ServerMVC\Apps\MyFirstMvcApp\bin\Debug\net5.0\SUS.MvcFramework.pdb
+C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\ServerMVC\Apps\MyFirstMvcApp\bin\Debug\net5.0\Views\Home\Index.html
+C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\ServerMVC\Apps\MyFirstMvcApp\bin\Debug\net5.0\Views\Users\Login.html
