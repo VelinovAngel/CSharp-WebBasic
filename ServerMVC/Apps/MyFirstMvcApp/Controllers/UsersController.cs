@@ -7,7 +7,7 @@
 
     public class UsersController
     {
-        HttpResponse Login(HttpRequest request)
+        public HttpResponse Login(HttpRequest request)
         {
             var responseHtml = "<h1>Login!</h1>";
             var responseBodyBytes = Encoding.UTF8.GetBytes(responseHtml);
@@ -16,7 +16,7 @@
             return response;
         }
 
-        HttpResponse Register(HttpRequest request)
+        public HttpResponse Register(HttpRequest request)
         {
             var responseHtml = "<h1>Register!</h1>" + request.Headers.FirstOrDefault(x => x.Name == "User-Agent")?.Value;
             var responseBodyBytes = Encoding.UTF8.GetBytes(responseHtml);
