@@ -21,7 +21,6 @@
             this.routeTable = routeTable;
         }
 
-
         public async Task StartAsync(int port)
         {
             TcpListener tcpListener = new TcpListener(IPAddress.Loopback, port);
