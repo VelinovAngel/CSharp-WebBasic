@@ -2,7 +2,7 @@
 {
     using SUS.Http;
     using SUS.MvcFramework;
-
+    using System;
 
     public class UsersController : Controller
     {
@@ -14,6 +14,15 @@
         public HttpResponse Register(HttpRequest request)
         {
             return this.View();
+        }
+
+        public HttpResponse DoLogin(HttpRequest request)
+        {
+            // TODO: Read data
+            // TODO: Check user
+            // TODO: Log user
+            // TODO: home page
+            return this.Redirect("/");
         }
     }
 }

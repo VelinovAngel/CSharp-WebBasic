@@ -4,6 +4,7 @@
     using System.Runtime.CompilerServices;
 
     using SUS.Http;
+    using SUS.Http.Enums;
 
     public abstract class Controller
     {
@@ -25,6 +26,13 @@
             var fileBytes = System.IO.File.ReadAllBytes(filePath);
             var response = new HttpResponse(contentType, fileBytes);
 
+            return response;
+        }
+
+        public HttpResponse Redirect(string url)
+        {
+            var response = new HttpResponse(HttpStatusCode.Found);
+            response.Headers.Add(new Header("Location", url));
             return response;
         }
     }

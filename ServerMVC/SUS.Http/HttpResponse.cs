@@ -8,6 +8,12 @@
 
     public class HttpResponse
     {
+        public HttpResponse(HttpStatusCode statusCode)
+        {
+            this.StatusCode = statusCode;
+            this.Headers = new List<Header>();
+        }
+
         public HttpResponse(string contentType, byte[] body, HttpStatusCode statusCode = HttpStatusCode.Ok)
         {
             if (body == null)
