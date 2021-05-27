@@ -12,6 +12,7 @@
         {
             this.StatusCode = statusCode;
             this.Headers = new List<Header>();
+            this.Cookies = new List<Cookie>();
         }
 
         public HttpResponse(string contentType, byte[] body, HttpStatusCode statusCode = HttpStatusCode.Ok)
@@ -20,6 +21,7 @@
             {
                 throw new ArgumentNullException(nameof(body));
             }
+
 
             this.StatusCode = statusCode;
             this.Body = body;
