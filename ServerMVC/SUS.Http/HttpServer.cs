@@ -2,6 +2,7 @@
 {
     using System;
     using System.Net;
+    using System.Linq;
     using System.Text;
     using System.Net.Sockets;
     using System.Threading.Tasks;
@@ -9,8 +10,7 @@
 
     using SUS.Http.Contracts;
     using SUS.Http.GlobalConstans;
-    using System.Linq;
-    using System.Globalization;
+
 
     public class HttpServer : IHttpServer
     {
@@ -70,7 +70,8 @@
                     //TODO: extract info requestAsString
 
                     HttpResponse response;
-                    var route = this.routeTable.FirstOrDefault(x => string.Compare(x.Path, request.Path, true, CultureInfo.InvariantCulture) == 0);
+                    var route = this.routeTable.FirstOrDefault(x => string.Compare(x.Path, request.Path, true) == 0 
+                    && x.Method == request.Method);
 
                     if (route != null)
                     {

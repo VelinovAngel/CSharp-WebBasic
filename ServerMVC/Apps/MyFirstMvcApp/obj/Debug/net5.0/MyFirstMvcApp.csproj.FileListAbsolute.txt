@@ -7,7 +7,6 @@ C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\ServerMVC\Apps\MyFirst
 C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\ServerMVC\Apps\MyFirstMvcApp\bin\Debug\net5.0\MyFirstMvcApp.pdb
 C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\ServerMVC\Apps\MyFirstMvcApp\bin\Debug\net5.0\SUS.Http.dll
 C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\ServerMVC\Apps\MyFirstMvcApp\bin\Debug\net5.0\SUS.Http.pdb
-C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\ServerMVC\Apps\MyFirstMvcApp\obj\Debug\net5.0\MyFirstMvcApp.csprojAssemblyReference.cache
 C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\ServerMVC\Apps\MyFirstMvcApp\obj\Debug\net5.0\MyFirstMvcApp.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\ServerMVC\Apps\MyFirstMvcApp\obj\Debug\net5.0\MyFirstMvcApp.AssemblyInfoInputs.cache
 C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\ServerMVC\Apps\MyFirstMvcApp\obj\Debug\net5.0\MyFirstMvcApp.AssemblyInfo.cs
@@ -31,3 +30,4 @@ C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\ServerMVC\Apps\MyFirst
 C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\ServerMVC\Apps\MyFirstMvcApp\bin\Debug\net5.0\wwwroot\css\custom.css
 C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\ServerMVC\Apps\MyFirstMvcApp\bin\Debug\net5.0\wwwroot\js\bootstrap.bundle.min.js
 C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\ServerMVC\Apps\MyFirstMvcApp\bin\Debug\net5.0\wwwroot\js\custom.js
+C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\ServerMVC\Apps\MyFirstMvcApp\obj\Debug\net5.0\MyFirstMvcApp.csproj.AssemblyReference.cache

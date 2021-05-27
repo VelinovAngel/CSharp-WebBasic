@@ -2,7 +2,6 @@ C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\ServerMVC\SUS.Http\bin
 C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\ServerMVC\SUS.Http\bin\Debug\net5.0\SUS.Http.dll
 C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\ServerMVC\SUS.Http\bin\Debug\net5.0\ref\SUS.Http.dll
 C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\ServerMVC\SUS.Http\bin\Debug\net5.0\SUS.Http.pdb
-C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\ServerMVC\SUS.Http\obj\Debug\net5.0\SUS.Http.csprojAssemblyReference.cache
 C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\ServerMVC\SUS.Http\obj\Debug\net5.0\SUS.Http.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\ServerMVC\SUS.Http\obj\Debug\net5.0\SUS.Http.AssemblyInfoInputs.cache
 C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\ServerMVC\SUS.Http\obj\Debug\net5.0\SUS.Http.AssemblyInfo.cs
@@ -10,3 +9,4 @@ C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\ServerMVC\SUS.Http\obj
 C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\ServerMVC\SUS.Http\obj\Debug\net5.0\SUS.Http.dll
 C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\ServerMVC\SUS.Http\obj\Debug\net5.0\ref\SUS.Http.dll
 C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\ServerMVC\SUS.Http\obj\Debug\net5.0\SUS.Http.pdb
+C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\ServerMVC\SUS.Http\obj\Debug\net5.0\SUS.Http.csproj.AssemblyReference.cache
