@@ -20,6 +20,7 @@
             routeTable.Add(new Route("/cards/all", new CardsController().Collection));
 
             routeTable.Add(new Route("/favicon.ico", new StaticFileController().Favicon));
+
             routeTable.Add(new Route("/css/bootstrap.min.css", new StaticFileController().Bootstrap));
             routeTable.Add(new Route("/css/custom.css", new StaticFileController().CustomCss));
             routeTable.Add(new Route("/js/custom.js", new StaticFileController().CustomJs));

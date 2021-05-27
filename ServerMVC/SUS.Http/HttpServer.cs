@@ -10,10 +10,11 @@
     using SUS.Http.Contracts;
     using SUS.Http.GlobalConstans;
     using System.Linq;
+    using System.Globalization;
 
     public class HttpServer : IHttpServer
     {
-        List<Route> routeTable; 
+        List<Route> routeTable;
 
         public HttpServer(List<Route> routeTable)
         {
@@ -65,11 +66,11 @@
                     var requestAsString = Encoding.UTF8.GetString(data.ToArray());
                     var request = new HttpRequest(requestAsString);
 
-                    //Console.WriteLine($"{request.Method} {request.Path} => {request.Headers.Count} headers");
+                    Console.WriteLine($"{request.Method} {request.Path} => {request.Headers.Count} headers");
                     //TODO: extract info requestAsString
 
                     HttpResponse response;
-                    var route = this.routeTable.FirstOrDefault(x => x.Path == request.Path);
+                    var route = this.routeTable.FirstOrDefault(x => string.Compare(x.Path, request.Path, true, CultureInfo.InvariantCulture) == 0);
 
                     if (route != null)
                     {
