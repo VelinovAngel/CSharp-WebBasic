@@ -2,7 +2,6 @@
 {
     using SUS.Http;
     using SUS.MvcFramework;
-    using System;
 
     public class UsersController : Controller
     {
