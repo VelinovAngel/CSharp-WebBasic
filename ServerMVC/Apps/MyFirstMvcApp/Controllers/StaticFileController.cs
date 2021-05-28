@@ -3,7 +3,6 @@
     using SUS.Http;
     using SUS.MvcFramework;
 
-
     public class StaticFileController : Controller
     {
         public HttpResponse Favicon(HttpRequest request)
