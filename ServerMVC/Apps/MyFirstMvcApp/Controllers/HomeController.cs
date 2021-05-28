@@ -1,8 +1,5 @@
 ﻿namespace MyFirstMvcApp.Controllers
 {
-    using System.Linq;
-    using System.Text;
-
     using SUS.Http;
     using SUS.MvcFramework;
 
