@@ -1,10 +1,11 @@
 ﻿namespace MyFirstMvcApp
 {
     using MyFirstMvcApp.Controllers;
+    using System.Collections.Generic;
+
     using SUS.Http;
     using SUS.Http.Enums;
     using SUS.MvcFramework.Contracts;
-    using System.Collections.Generic;
 
 
     public class Startup : IMvcApplication
