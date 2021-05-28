@@ -1,8 +1,9 @@
 ﻿namespace SUS.Http
 {
     using System;
-    using System.Collections.Generic;
     using System.Text;
+    using System.Collections.Generic;
+
     using SUS.Http.Enums;
     using SUS.Http.GlobalConstans;
 
