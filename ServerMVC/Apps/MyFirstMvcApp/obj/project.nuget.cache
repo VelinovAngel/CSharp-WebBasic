@@ -1,8 +1,19 @@
 {
   "version": 2,
-  "dgSpecHash": "xrbh2f0cYTsVANoLa7mI41LBVrJ34p85BYSwHrPE8dEQDtwVADTre6ioRzYz0varO9CZ7Y2yOpYpTMlt+DX5Gw==",
+  "dgSpecHash": "8EVO7vfTaZBC0PHMtsuNZ6SRoVODiX5DLsMRLHyWyqbpOOW1OCxRTypkijZnzxcdAirSIh7RSquwh4D3dJWOyA==",
   "success": true,
   "projectFilePath": "C:\\Users\\nik_w\\OneDrive\\Desktop\\SoftUni\\Git\\C# Web Basics\\ServerMVC\\Apps\\MyFirstMvcApp\\MyFirstMvcApp.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\nik_w\\.nuget\\packages\\microsoft.codeanalysis.analyzers\\3.0.0\\microsoft.codeanalysis.analyzers.3.0.0.nupkg.sha512",
+    "C:\\Users\\nik_w\\.nuget\\packages\\microsoft.codeanalysis.common\\3.9.0\\microsoft.codeanalysis.common.3.9.0.nupkg.sha512",
+    "C:\\Users\\nik_w\\.nuget\\packages\\microsoft.codeanalysis.csharp\\3.9.0\\microsoft.codeanalysis.csharp.3.9.0.nupkg.sha512",
+    "C:\\Users\\nik_w\\.nuget\\packages\\microsoft.netcore.platforms\\2.1.2\\microsoft.netcore.platforms.2.1.2.nupkg.sha512",
+    "C:\\Users\\nik_w\\.nuget\\packages\\system.collections.immutable\\5.0.0\\system.collections.immutable.5.0.0.nupkg.sha512",
+    "C:\\Users\\nik_w\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
+    "C:\\Users\\nik_w\\.nuget\\packages\\system.reflection.metadata\\5.0.0\\system.reflection.metadata.5.0.0.nupkg.sha512",
+    "C:\\Users\\nik_w\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\5.0.0\\system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512",
+    "C:\\Users\\nik_w\\.nuget\\packages\\system.text.encoding.codepages\\4.5.1\\system.text.encoding.codepages.4.5.1.nupkg.sha512",
+    "C:\\Users\\nik_w\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512"
+  ],
   "logs": []
 }

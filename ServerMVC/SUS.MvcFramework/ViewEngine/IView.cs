@@ -2,6 +2,6 @@
 {
     public interface IView
     {
-        string GetHtml(object viewModel);
+        string ExecuteTemplate(object viewModel);
     }
 }

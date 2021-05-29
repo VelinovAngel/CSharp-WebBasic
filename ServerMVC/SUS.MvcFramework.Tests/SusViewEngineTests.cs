@@ -1,10 +1,10 @@
 namespace SUS.MvcFramework.Tests
 {
     using System;
+    using System.IO;
     using Xunit;
 
     using SUS.MvcFramework.ViewEngine;
-    using System.IO;
 
     public class SusViewEngineTests
     {
