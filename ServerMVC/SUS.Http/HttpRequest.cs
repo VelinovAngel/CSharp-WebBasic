@@ -10,7 +10,6 @@
 
     public class HttpRequest
     {
-
         public HttpRequest(string requestString)
         {
             this.Headers = new List<Header>();
