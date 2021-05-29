@@ -16,15 +16,30 @@
     {
         public string GetHtml(string templateCode, object viewModel)
         {
-            string csharpCode = GenerateCSharpFromTemplate(templateCode);
+            string csharpCode = GenerateCSharpFromTemplate(templateCode, viewModel);
             IView executableObject = GenerateExecutableCode(csharpCode, viewModel);
             string html = executableObject.ExecuteTemplate(viewModel);
             return html.TrimEnd();
         }
 
-        private string GenerateCSharpFromTemplate(string templateCode)
+        private string GenerateCSharpFromTemplate(string templateCode, object viewModel)
         {
             string methodBody = GetMethodBody(templateCode);
+            string typeOfModel = "object";
+            if (viewModel != null)
+            {
+                if (viewModel.GetType().IsGenericType)
+                {
+                    var modelName = viewModel.GetType().FullName;
+                    var genericArguments = viewModel.GetType().GenericTypeArguments;
+                    typeOfModel = modelName
+                        .Substring(0, modelName.IndexOf('`')) + "<" + string.Join(",", genericArguments.Select(x => x.FullName)) + ">";
+                }
+                else
+                {
+                    typeOfModel = viewModel.GetType().FullName;
+                }
+            }
             string csharpCode = @"
 using System;
 using System.Text;
@@ -38,6 +53,7 @@ namespace ViewNamespace
     {
         public string ExecuteTemplate(object viewModel)
         {
+            var Model = viewModel as " + typeOfModel + @";
             var html = new StringBuilder();
 
             " + methodBody + @"          
@@ -54,7 +70,7 @@ namespace ViewNamespace
         private string GetMethodBody(string templateCode)
         {
             Regex csharpCodeRegex = new Regex(@"[^\""\s&\'\<]+");
-            var suppotedOperators = new List<string>
+            var supportedOperators = new List<string>
             {
                 "for",
                 "while",
@@ -67,7 +83,8 @@ namespace ViewNamespace
             string line = string.Empty;
             while ((line = sr.ReadLine()) != null)
             {
-                if (suppotedOperators.Any(x => line.TrimStart().StartsWith("@" + x)))
+                if (line.TrimStart().StartsWith("@") &&
+                    supportedOperators.Any(x => line.TrimStart().StartsWith("@" + x)))
                 {
                     var atSignLocation = line.IndexOf("@");
                     line = line.Remove(atSignLocation, 1);
@@ -85,14 +102,15 @@ namespace ViewNamespace
                     {
                         var atSignLocation = line.IndexOf("@");
                         var htmlBeforeAtSign = line.Substring(0, atSignLocation);
-                        csharpCode.Append(htmlBeforeAtSign + "\" + ");
+                        csharpCode.Append(htmlBeforeAtSign.Replace("\"", "\"\"") + "\" + ");
                         var lineAfterAtSign = line.Substring(atSignLocation + 1);
                         var code = csharpCodeRegex.Match(lineAfterAtSign).Value;
                         //csharp code
                         csharpCode.Append(code + " + \"");
+                        line = lineAfterAtSign.Substring(code.Length);
                     }
-                    csharpCode.AppendLine($"html.AppendLine(@\"{line.Replace("\"", "\"\"")}\");");
-                    csharpCode.AppendLine("\");");
+                    //csharpCode.AppendLine($"html.AppendLine(@\"{line.Replace("\"", "\"\"")}\");");
+                    csharpCode.AppendLine(line.Replace("\"", "\"\"") + "\");");
                 }
             }
             return csharpCode.ToString();

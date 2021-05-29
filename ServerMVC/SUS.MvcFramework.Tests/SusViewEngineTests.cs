@@ -5,8 +5,9 @@ namespace SUS.MvcFramework.Tests
     using Xunit;
 
     using SUS.MvcFramework.ViewEngine;
+    using System.Collections.Generic;
 
-    public class SusViewEngineTests
+    public partial class SusViewEngineTests
     {
         public object IViewModel { get; private set; }
 
@@ -19,8 +20,8 @@ namespace SUS.MvcFramework.Tests
         {
             var viewModel = new TestViewModel
             {
-                DateOfBirth = new DateTime(2019, 6, 1),
                 Name = "Doggo Arghentino",
+                DateOfBirth = new DateTime(2019, 6, 1),
                 Price = 12345.67M,
             };
 
@@ -31,13 +32,18 @@ namespace SUS.MvcFramework.Tests
             Assert.Equal(expectedResult, result);
         }
 
-        public class TestViewModel
+        [Fact]
+        public void TestTemplateViewModel()
         {
-            public string Name { get; set; }
-
-            public decimal Price { get; set; }
-
-            public DateTime DateOfBirth { get; set; }
+            IViewEngine viewEngine = new SusViewEngine();
+            var actualResult = viewEngine.GetHtml(@"@foreach(var num in Model)
+{
+<span>@num</span>
+}", new List<int>() { 1, 2, 3 });
+            var expectedResult = @"<span>1</span>
+<span>2</span>
+<span>3</span>";
+            Assert.Equal(expectedResult, actualResult);
         }
     }
 }
