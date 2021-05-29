@@ -1648,6 +1648,29 @@
         "build": {
           "build/netcoreapp2.1/xunit.runner.visualstudio.props": {}
         }
+      },
+      "SUS.Http/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/SUS.Http.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SUS.Http.dll": {}
+        }
+      },
+      "SUS.MvcFramework/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "SUS.Http": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/SUS.MvcFramework.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SUS.MvcFramework.dll": {}
+        }
       }
     }
   },
@@ -5611,11 +5634,22 @@
         "xunit.runner.visualstudio.2.4.3.nupkg.sha512",
         "xunit.runner.visualstudio.nuspec"
       ]
+    },
+    "SUS.Http/1.0.0": {
+      "type": "project",
+      "path": "../SUS.Http/SUS.Http.csproj",
+      "msbuildProject": "../SUS.Http/SUS.Http.csproj"
+    },
+    "SUS.MvcFramework/1.0.0": {
+      "type": "project",
+      "path": "../SUS.MvcFramework/SUS.MvcFramework.csproj",
+      "msbuildProject": "../SUS.MvcFramework/SUS.MvcFramework.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0": [
       "Microsoft.NET.Test.Sdk >= 16.7.1",
+      "SUS.MvcFramework >= 1.0.0",
       "coverlet.collector >= 1.3.0",
       "xunit >= 2.4.1",
       "xunit.runner.visualstudio >= 2.4.3"
@@ -5647,7 +5681,11 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\nik_w\\OneDrive\\Desktop\\SoftUni\\Git\\C# Web Basics\\ServerMVC\\SUS.MvcFramework\\SUS.MvcFramework.csproj": {
+              "projectPath": "C:\\Users\\nik_w\\OneDrive\\Desktop\\SoftUni\\Git\\C# Web Basics\\ServerMVC\\SUS.MvcFramework\\SUS.MvcFramework.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
