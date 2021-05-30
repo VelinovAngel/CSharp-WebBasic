@@ -15,6 +15,7 @@
             return this.View();
         }
 
+        [HttpPost]
         public HttpResponse DoLogin(HttpRequest request)
         {
             // TODO: Read data

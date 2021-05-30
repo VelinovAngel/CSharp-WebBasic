@@ -7,6 +7,7 @@
 
     public class HomeController : Controller
     {
+        [HttpGet("/")]
         public HttpResponse Index(HttpRequest request)
         {
             var viewModel = new IndexViewModel();
@@ -15,7 +16,7 @@
             return this.View(viewModel);
         }
 
-        internal HttpResponse About(HttpRequest arg)
+        public HttpResponse About(HttpRequest arg)
         {
             return this.View();
         }
