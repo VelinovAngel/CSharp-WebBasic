@@ -3,10 +3,9 @@
     using System.Collections.Generic;
 
     using SUS.Http;
-    using SUS.Http.Enums;
+    using BattleCards.Data;
     using SUS.MvcFramework.Contracts;
-    using MyFirstMvcApp.Controllers;
-
+    using Microsoft.EntityFrameworkCore;
 
     public class Startup : IMvcApplication
     {
@@ -16,7 +15,7 @@
 
         public void Configure(List<Route> routeTable)
         {
-
+            new ApplicationDbContext().Database.Migrate();
         }
     }
 }
