@@ -1,4 +1,4 @@
-﻿namespace MyFirstMvcApp.Controllers
+﻿namespace BattleCards.Controllers
 {
     using SUS.Http;
     using SUS.MvcFramework;

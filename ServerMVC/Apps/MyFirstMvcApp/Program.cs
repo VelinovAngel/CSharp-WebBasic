@@ -1,4 +1,4 @@
-﻿namespace MyFirstMvcApp
+﻿namespace BattleCards
 {
     using System.Threading.Tasks;
 
