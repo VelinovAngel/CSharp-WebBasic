@@ -1,14 +1,15 @@
 ﻿namespace MyFirstMvcApp.Controllers
 {
-    using MyFirstMvcApp.ViewModels;
+    using System;
+
     using SUS.Http;
     using SUS.MvcFramework;
-    using System;
+    using MyFirstMvcApp.ViewModels;
 
     public class HomeController : Controller
     {
         [HttpGet("/")]
-        public HttpResponse Index(HttpRequest request)
+        public HttpResponse Index()
         {
             var viewModel = new IndexViewModel();
             viewModel.CurrentYear = DateTime.UtcNow.Year;
@@ -16,7 +17,7 @@
             return this.View(viewModel);
         }
 
-        public HttpResponse About(HttpRequest arg)
+        public HttpResponse About()
         {
             return this.View();
         }

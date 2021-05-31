@@ -31,6 +31,8 @@
             return response;
         }
 
+        public HttpRequest Request { get; set; }
+
         public HttpResponse File(string filePath, string contentType)
         {
             var fileBytes = System.IO.File.ReadAllBytes(filePath);
