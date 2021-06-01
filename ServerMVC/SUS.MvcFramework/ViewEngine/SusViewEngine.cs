@@ -112,7 +112,6 @@ namespace ViewNamespace
                         line = lineAfterAtSign.Substring(code.Length);
                     }
                     csharpCode.AppendLine(line.Replace("\"", "\"\"") + "\");");
-                  //csharpCode.AppendLine(line.Replace("\"", "\"\"") + "\");");
                 }
             }
             return csharpCode.ToString();
