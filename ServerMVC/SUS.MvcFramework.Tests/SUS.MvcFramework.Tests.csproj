@@ -36,6 +36,12 @@
     <None Update="ViewTests\Foreach.Result.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="ViewTests\htmlSorceCode.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="ViewTests\htmlSorceCode.Result.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="ViewTests\IfElseFor.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

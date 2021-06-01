@@ -138,3 +138,5 @@ C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\ServerMVC\SUS.MvcFrame
 C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\ServerMVC\SUS.MvcFramework.Tests\bin\Debug\net5.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
 C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\ServerMVC\SUS.MvcFramework.Tests\bin\Debug\net5.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
 C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\ServerMVC\SUS.MvcFramework.Tests\bin\Debug\net5.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\ServerMVC\SUS.MvcFramework.Tests\bin\Debug\net5.0\ViewTests\htmlSorceCode.html
+C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\C# Web Basics\ServerMVC\SUS.MvcFramework.Tests\bin\Debug\net5.0\ViewTests\htmlSorceCode.Result.html

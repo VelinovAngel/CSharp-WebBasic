@@ -16,6 +16,7 @@ namespace SUS.MvcFramework.Tests
         [InlineData("Foreach")]
         [InlineData("IfElseFor")]
         [InlineData("ViewModel")]
+        [InlineData("htmlSorceCode")]
         public void TestGetHtml(string fileName)
         {
             var viewModel = new TestViewModel
