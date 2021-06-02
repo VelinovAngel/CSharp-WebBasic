@@ -5,7 +5,7 @@
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
 
     <link rel="stylesheet" href="/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/custom.css">    
+    <link rel="stylesheet" href="/css/custom.css">
 
     <title>Battle Cards</title>
 </head>
@@ -16,7 +16,6 @@
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="text-white">MENU</span>
             </button>
-
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
@@ -25,24 +24,31 @@
                     <li class="nav-item">
                         <a class="nav-link text-white active h5" href="/Home/About">About</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white active h5" href="/Users/Login">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white active h5" href="/Users/Register">Register</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white active h5" href="/Cards/Add">Add Card</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white active h5" href="/Cards/Collection">My Collection</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white active h5" href="/Cards/All">All</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-danger active h5" href="/Logout">Logout</a>
-                    </li>
+                    @if (User != null)
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link text-white active h5" href="/Cards/Add">Add Card</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white active h5" href="/Cards/Collection">My Collection</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white active h5" href="/Cards/All">All</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-danger active h5" href="/Logout">Logout</a>
+                        </li>
+                    }
+                    @else
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link text-white active h5" href="/Users/Login">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white active h5" href="/Users/Register">Register</a>
+                        </li>
+                    }
+
                 </ul>
             </div>
         </nav>

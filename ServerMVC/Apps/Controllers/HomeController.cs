@@ -12,14 +12,14 @@
         [HttpGet("/")]
         public HttpResponse Index()
         {
-            var viewModel = new IndexViewModel();
-            viewModel.CurrentYear = DateTime.UtcNow.Year;
-            viewModel.Message = "Welcome to Battle Cards";
-            if (this.Request.Session.ContainsKey("about"))
+            if (this.IsUserSignIn())
             {
-                viewModel.Message += HttpConstans.NewLine + "YOU WERE ON THE ABOUT PAGE!";
+                return this.Redirect("/Cards/All");
             }
-            return this.View(viewModel);
+            else
+            {
+                return this.View();
+            }
         }
 
         public HttpResponse About()

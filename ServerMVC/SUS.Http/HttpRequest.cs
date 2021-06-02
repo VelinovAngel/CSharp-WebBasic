@@ -85,7 +85,7 @@
             var parameters = this.Body.Split('&', StringSplitOptions.RemoveEmptyEntries);
             foreach (var parameter in parameters)
             {
-                var parameterParts = parameter.Split('=');
+                var parameterParts = parameter.Split('=', 2);
                 var name = parameterParts[0];
                 var value = WebUtility.UrlDecode(parameterParts[1]);
                 if (!this.FromData.ContainsKey(name))
