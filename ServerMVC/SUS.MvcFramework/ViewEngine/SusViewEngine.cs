@@ -83,15 +83,13 @@ namespace ViewNamespace
             string line = string.Empty;
             while ((line = sr.ReadLine()) != null)
             {
-                if (line.TrimStart().StartsWith("@") &&
-                    supportedOperators.Any(x => line.TrimStart().StartsWith("@" + x)))
+                if (line.TrimStart().StartsWith("@") && supportedOperators.Any(x => line.TrimStart().StartsWith("@" + x)))
                 {
                     var atSignLocation = line.IndexOf("@");
                     line = line.Remove(atSignLocation, 1);
                     csharpCode.AppendLine(line);
                 }
-                else if (line.TrimStart().StartsWith("{") ||
-                    line.TrimStart().StartsWith("}"))
+                else if (line.TrimStart().StartsWith("{") || line.TrimStart().StartsWith("}"))
                 {
                     csharpCode.AppendLine(line);
                 }
