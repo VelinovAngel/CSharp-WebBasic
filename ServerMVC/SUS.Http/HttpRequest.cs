@@ -1,13 +1,13 @@
 ﻿namespace SUS.Http
 {
     using System;
+    using System.Net;
     using System.Text;
+    using System.Linq;
     using System.Collections.Generic;
 
     using SUS.Http.Enums;
     using SUS.Http.GlobalConstans;
-    using System.Linq;
-    using System.Net;
 
     public class HttpRequest
     {
@@ -106,6 +106,7 @@
         public Dictionary<string, string> Session { get; set; }
 
         public Dictionary<string, string> FromData { get; set; }
+
         public string Body { get; set; }
     }
 }

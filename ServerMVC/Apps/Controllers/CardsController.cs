@@ -38,7 +38,7 @@
 
             dbContext.SaveChanges();
 
-            return this.Redirect("/");
+            return this.Redirect("/Cards/All");
         }
 
         public HttpResponse All()
@@ -54,7 +54,7 @@
                 Type = x.Keyword,
             }).ToList();
 
-            return this.View(new AllCardViewModel() { Cards = cardsViewModel });
+            return this.View(cardsViewModel);
         }
 
         public HttpResponse Collection()

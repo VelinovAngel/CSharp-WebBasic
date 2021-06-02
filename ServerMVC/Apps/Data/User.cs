@@ -5,11 +5,12 @@
 
     using SUS.MvcFramework;
 
-    public class User : UserIdentity
+    public class User : IdentityUser<string>
     {
         public User()
         {
             this.Id = Guid.NewGuid().ToString();
+            this.Role = IdentityRole.User;
             this.Cards = new HashSet<UserCard>();
         }
         public virtual ICollection<UserCard> Cards { get; set; }
