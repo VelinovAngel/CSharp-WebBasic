@@ -62,9 +62,23 @@
 
             }
 
-            if (this.Cookies.Any(x => x.Name == HttpConstans.SessionCookieName)
-            {
+            var sessionCookie = this.Cookies.FirstOrDefault(x => x.Name == HttpConstans.SessionCookieName);
 
+            if (sessionCookie == null)
+            {
+                var sessionId = Guid.NewGuid().ToString();
+                this.Session = new Dictionary<string, string>();
+                Sessions.Add(sessionId, this.Session);
+                this.Cookies.Add(new Cookie(HttpConstans.SessionCookieName, sessionId));
+            }
+            else if (!Sessions.ContainsKey(sessionCookie.Value))
+            {
+                this.Session = new Dictionary<string, string>();
+                Sessions.Add(sessionCookie.Value, this.Session);
+            }
+            else
+            {
+                this.Session = Sessions[sessionCookie.Value];
             }
 
             this.Body = bodyBuilder.ToString();
@@ -88,6 +102,8 @@
         public ICollection<Header> Headers { get; set; }
 
         public ICollection<Cookie> Cookies { get; set; }
+
+        public Dictionary<string, string> Session { get; set; }
 
         public Dictionary<string, string> FromData { get; set; }
         public string Body { get; set; }

@@ -69,7 +69,7 @@
                     //TODO: extract info requestAsString
 
                     HttpResponse response;
-                    var route = this.routeTable.FirstOrDefault(x => string.Compare(x.Path, request.Path, true) == 0 
+                    var route = this.routeTable.FirstOrDefault(x => string.Compare(x.Path, request.Path, true) == 0
                     && x.Method == request.Method);
 
                     if (route != null)
@@ -83,8 +83,15 @@
                     }
 
                     response.Headers.Add(new Header("Server", "SoftUniServer 1.0"));
-                    response.Cookies.Add(new ResponseCookie("sid", Guid.NewGuid().ToString())
-                    { HttpOnly = true, MaxAge = 60 * 24 * 60 * 60 });
+
+                    var sessionCookie = request.Cookies.FirstOrDefault(x => x.Name == HttpConstans.SessionCookieName);
+                    if (sessionCookie != null)
+                    {
+                        var responseSessionCookie = new ResponseCookie(sessionCookie.Name, sessionCookie.Value);
+                        responseSessionCookie.Path = "/";
+                        response.Cookies.Add(responseSessionCookie);
+                    }
+
                     var responseHeaderBytes = Encoding.UTF8.GetBytes(response.ToString());
                     await stream.WriteAsync(responseHeaderBytes, 0, responseHeaderBytes.Length);
                     await stream.WriteAsync(response.Body, 0, response.Body.Length);
