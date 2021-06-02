@@ -6,11 +6,11 @@
     using System.Linq;
     using System.Reflection;
     using System.Collections.Generic;
+    using System.Text.RegularExpressions;
 
     using Microsoft.CodeAnalysis;
-    using Microsoft.CodeAnalysis.CSharp;
     using Microsoft.CodeAnalysis.Emit;
-    using System.Text.RegularExpressions;
+    using Microsoft.CodeAnalysis.CSharp;
 
     public class SusViewEngine : IViewEngine
     {
