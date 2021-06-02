@@ -11,6 +11,7 @@
 
     public class HttpRequest
     {
+        public static IDictionary<string, Dictionary<string, string>> Sessions = new Dictionary<string, Dictionary<string, string>>();
         public HttpRequest(string requestString)
         {
             this.Headers = new List<Header>();
@@ -58,6 +59,11 @@
                 {
                     this.Cookies.Add(new Cookie(cookieAsString));
                 }
+
+            }
+
+            if (this.Cookies.Any(x => x.Name == HttpConstans.SessionCookieName)
+            {
 
             }
 

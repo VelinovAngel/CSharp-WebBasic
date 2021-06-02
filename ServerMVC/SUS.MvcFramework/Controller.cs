@@ -19,9 +19,7 @@
         {
             var viewContent = System.IO.File.ReadAllText("Views/" + this.GetType().Name.Replace("Controller", string.Empty) + "/" + viewPath + ".cshtml");
             viewContent = this.viewEngine.GetHtml(viewContent, viewModel);
-
             var responseHtml = this.PutViewLayout(viewContent, viewModel);
-
             var responseBodyBytes = Encoding.UTF8.GetBytes(responseHtml);
             var response = new HttpResponse("text/html", responseBodyBytes);
             return response;
@@ -31,7 +29,6 @@
         {
             var viewContent = $"<div class=\"alert alert-danger\" role=\"alert\">{errorText}</div>";
             var responseHtml = this.PutViewLayout(viewContent);
-
             var responseBodyBytes = Encoding.UTF8.GetBytes(responseHtml);
             var response = new HttpResponse("text/html", responseBodyBytes, HttpStatusCode.ServerError);
             return response;
@@ -43,7 +40,6 @@
             layout = layout.Replace("@RenderBody()", "_____VIEW_GOES_HERE_____");
             layout = this.viewEngine.GetHtml(layout, viewModel);
             var responseHtml = layout.Replace("_____VIEW_GOES_HERE_____", viewContent);
-
             return responseHtml;
         }
 
@@ -53,7 +49,6 @@
         {
             var fileBytes = System.IO.File.ReadAllBytes(filePath);
             var response = new HttpResponse(contentType, fileBytes);
-
             return response;
         }
 
