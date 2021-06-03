@@ -59,7 +59,6 @@
                 {
                     this.Cookies.Add(new Cookie(cookieAsString));
                 }
-
             }
 
             var sessionCookie = this.Cookies.FirstOrDefault(x => x.Name == HttpConstans.SessionCookieName);
