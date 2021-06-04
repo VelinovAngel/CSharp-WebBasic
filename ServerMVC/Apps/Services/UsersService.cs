@@ -7,7 +7,7 @@
     using BattleCards.Data;
     using SUS.MvcFramework;
 
-    class UsersService : IUsersService
+    public class UsersService : IUsersService
     {
         private readonly ApplicationDbContext db;
         public UsersService()
@@ -15,7 +15,7 @@
             this.db = new ApplicationDbContext();
         }
 
-        public void CreateUser(string username, string email, string password)
+        public string CreateUser(string username, string email, string password)
         {
             var user = new User
             {
@@ -26,12 +26,13 @@
             };
             this.db.Users.Add(user);
             this.db.SaveChanges();
+            return user.Id;
         }
 
-        public bool IsUserValid(string username, string password)
+        public string GetUserId(string username, string password)
         {
             var user = this.db.Users.FirstOrDefault(x => x.Username == username);
-            return user.Password == ComputeHash(password);
+            return user?.Id;
         }
 
         public bool IsEmailAvailable(string email)

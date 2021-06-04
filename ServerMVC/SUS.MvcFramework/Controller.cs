@@ -64,6 +64,14 @@
             var response = new HttpResponse("text/html", responseBodyBytes, HttpStatusCode.ServerError);
             return response;
         }
+        protected HttpResponse SuccessfulRegister(string successfulRegister)
+        {
+            var viewContent = $"<div class=\"alert alert-success\" role=\"alert\">{successfulRegister}</div>";
+            var responseHtml = this.PutViewLayout(viewContent);
+            var responseBodyBytes = Encoding.UTF8.GetBytes(responseHtml);
+            var response = new HttpResponse("text/html", responseBodyBytes, HttpStatusCode.ServerError);
+            return response;
+        }
 
         private string PutViewLayout(string viewContent, object viewModel = null)
         {

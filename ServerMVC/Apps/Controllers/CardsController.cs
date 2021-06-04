@@ -21,19 +21,19 @@
         {
             var dbContext = new ApplicationDbContext();
 
-            if (this.Request.FromData["name"].Length < 5)
+            if (this.Request.FormData["name"].Length < 5)
             {
                 return this.Error("Name should be at least 5 characters long.");
             }
 
             dbContext.Cards.Add(new Card
             {
-                Attack = int.Parse(this.Request.FromData["attack"]),
-                Health = int.Parse(this.Request.FromData["health"]),
-                Description = this.Request.FromData["description"],
-                Name = this.Request.FromData["name"],
-                ImageUrl = this.Request.FromData["image"],
-                Keyword = this.Request.FromData["keyword"],
+                Attack = int.Parse(this.Request.FormData["attack"]),
+                Health = int.Parse(this.Request.FormData["health"]),
+                Description = this.Request.FormData["description"],
+                Name = this.Request.FormData["name"],
+                ImageUrl = this.Request.FormData["image"],
+                Keyword = this.Request.FormData["keyword"],
             });
 
             dbContext.SaveChanges();

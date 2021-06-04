@@ -16,7 +16,7 @@
         {
             this.Headers = new List<Header>();
             this.Cookies = new List<Cookie>();
-            this.FromData = new Dictionary<string, string>();
+            this.FormData = new Dictionary<string, string>();
 
             var lines = requestString.Split(new string[] { HttpConstans.NewLine }, StringSplitOptions.None);
 
@@ -87,9 +87,9 @@
                 var parameterParts = parameter.Split('=', 2);
                 var name = parameterParts[0];
                 var value = WebUtility.UrlDecode(parameterParts[1]);
-                if (!this.FromData.ContainsKey(name))
+                if (!this.FormData.ContainsKey(name))
                 {
-                    this.FromData.Add(name, value);
+                    this.FormData.Add(name, value);
                 }
             }
         }
@@ -104,7 +104,7 @@
 
         public Dictionary<string, string> Session { get; set; }
 
-        public Dictionary<string, string> FromData { get; set; }
+        public Dictionary<string, string> FormData { get; set; }
 
         public string Body { get; set; }
     }
