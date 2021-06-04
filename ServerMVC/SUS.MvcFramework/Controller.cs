@@ -29,7 +29,7 @@
 
         protected bool IsUserSignIn() =>
             this.Request.Session.ContainsKey(UserIdSessionName) &&
-            this.Request.Session.ContainsKey(UserIdSessionName) != null;
+            this.Request.Session[UserIdSessionName] != null;
             
 
         protected string GetUserId() =>

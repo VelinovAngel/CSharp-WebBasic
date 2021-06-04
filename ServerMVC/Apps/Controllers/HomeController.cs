@@ -12,10 +12,8 @@
             {
                 return this.Redirect("/Cards/All");
             }
-            else
-            {
-                return this.View();
-            }
+
+            return this.View();
         }
 
         public HttpResponse About()

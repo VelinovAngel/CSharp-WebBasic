@@ -21,7 +21,7 @@
             return this.View();
         }
 
-        [HttpPost("Users/Login")]
+        [HttpPost("/Users/Login")]
         public HttpResponse DoLogin()
         {
             var username = this.Request.FormData["username"];
@@ -52,7 +52,7 @@
 
             if (username == null || username.Length < 5 || username.Length > 20)
             {
-                return this.Error("Invalid username. The username should be between 5 and 20 characters");
+                return this.Error("Invalid username. The username should be between 6 and 20 characters");
             }
 
             if (!Regex.IsMatch(username, @"^[a-zA-Z0-9\.]+$"))
@@ -67,7 +67,7 @@
 
             if (password == null || password.Length < 6 || password.Length > 20)
             {
-                return this.Error("Invalid password. The password should be between 5 and 20 characters");
+                return this.Error("Invalid password. The password should be between 6 and 20 characters");
             }
 
             if (password != confirmPassword)
@@ -90,11 +90,12 @@
             return this.Successful("Successful registration :)");      
         }
 
+
         public HttpResponse Logout()
         {
             if (!this.IsUserSignIn())
             {
-                return this.Error("Only logged-in users ca logout!");
+                return this.Error("Only logged-in users can logout!");
             }
 
             this.SignOut();
