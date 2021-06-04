@@ -1,11 +1,7 @@
 ﻿namespace BattleCards.Controllers
 {
-    using System;
-
     using SUS.Http;
     using SUS.MvcFramework;
-    using BattleCards.ViewModels;
-    using SUS.Http.GlobalConstans;
 
     public class HomeController : Controller
     {

@@ -56,17 +56,9 @@
             return response;
         }
 
-        protected HttpResponse SuccessfulLogin(string successfulLogin)
+        protected HttpResponse Successful(string successful)
         {
-            var viewContent = $"<div class=\"alert alert-success\" role=\"alert\">{successfulLogin}</div>";
-            var responseHtml = this.PutViewLayout(viewContent);
-            var responseBodyBytes = Encoding.UTF8.GetBytes(responseHtml);
-            var response = new HttpResponse("text/html", responseBodyBytes, HttpStatusCode.ServerError);
-            return response;
-        }
-        protected HttpResponse SuccessfulRegister(string successfulRegister)
-        {
-            var viewContent = $"<div class=\"alert alert-success\" role=\"alert\">{successfulRegister}</div>";
+            var viewContent = $"<div class=\"alert alert-success\" role=\"alert\">{successful}</div>";
             var responseHtml = this.PutViewLayout(viewContent);
             var responseBodyBytes = Encoding.UTF8.GetBytes(responseHtml);
             var response = new HttpResponse("text/html", responseBodyBytes, HttpStatusCode.ServerError);

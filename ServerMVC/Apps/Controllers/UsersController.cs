@@ -37,7 +37,6 @@
             return this.Successful("Successful login");
         }
 
-        [HttpPost]
         public HttpResponse Register()
         {
             return this.View();
@@ -56,7 +55,7 @@
                 return this.Error("Invalid username. The username should be between 5 and 20 characters");
             }
 
-            if (!Regex.IsMatch(username, @"[a-zA-Z0-9\.]+"))
+            if (!Regex.IsMatch(username, @"^[a-zA-Z0-9\.]+$"))
             {
                 return this.Error("Invalid username");
             }
@@ -88,8 +87,7 @@
 
             var userId = this.userService.CreateUser(username, email, password);
 
-            this.Successful("Successful registration :)");
-            return this.Redirect("/Users/Login");
+            return this.Successful("Successful registration :)");      
         }
 
         public HttpResponse Logout()
