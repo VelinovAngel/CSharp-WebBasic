@@ -96,6 +96,11 @@
                 return request.FormData[parameterName];
             }
 
+            if (request.QueryData.ContainsKey(parameterName))
+            {
+                return request.QueryData[parameterName];
+            }
+
             return null;
         }
 
