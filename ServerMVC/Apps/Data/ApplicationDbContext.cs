@@ -2,14 +2,14 @@
 {
     using Microsoft.EntityFrameworkCore;
 
-    class ApplicationDbContext : DbContext
+    public class ApplicationDbContext : DbContext
     {
         public ApplicationDbContext()
         {
         }
 
         public ApplicationDbContext(DbContextOptions dbContextOptions)
-            :base(dbContextOptions)
+            : base(dbContextOptions)
         {
         }
 
@@ -23,7 +23,7 @@
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<UserCard>().HasKey(x => new { x.UserId, x.CardId});
+            modelBuilder.Entity<UserCard>().HasKey(x => new { x.UserId, x.CardId });
             base.OnModelCreating(modelBuilder);
         }
 

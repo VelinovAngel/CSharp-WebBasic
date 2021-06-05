@@ -10,9 +10,9 @@
     public class UsersService : IUsersService
     {
         private readonly ApplicationDbContext db;
-        public UsersService()
+        public UsersService(ApplicationDbContext db)
         {
-            this.db = new ApplicationDbContext();
+            this.db = db;
         }
 
         public string CreateUser(string username, string email, string password)

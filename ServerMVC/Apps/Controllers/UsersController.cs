@@ -1,23 +1,29 @@
 ﻿namespace BattleCards.Controllers
 {
+    using System.Text.RegularExpressions;
+    using System.ComponentModel.DataAnnotations;
+
     using SUS.Http;
     using SUS.MvcFramework;
 
     using BattleCards.Services;
-    using System.Text.RegularExpressions;
-    using System.ComponentModel.DataAnnotations;
 
     public class UsersController : Controller
     {
-        private UsersService userService;
+        private readonly IUsersService usersService;
 
-        public UsersController()
+        public UsersController(IUsersService usersService)
         {
-            this.userService = new UsersService();
+            this.usersService = usersService;
         }
 
         public HttpResponse Login()
         {
+            if (this.IsUserSignIn())
+            {
+                return this.Redirect("/");
+            }
+
             return this.View();
         }
 
@@ -26,7 +32,7 @@
         {
             var username = this.Request.FormData["username"];
             var password = this.Request.FormData["password"];
-            var userId = this.userService.GetUserId(username, password);
+            var userId = this.usersService.GetUserId(username, password);
 
             if (userId == null)
             {
@@ -39,6 +45,11 @@
 
         public HttpResponse Register()
         {
+            if (this.IsUserSignIn())
+            {
+                return this.Redirect("/");
+            }
+
             return this.View();
         }
 
@@ -75,17 +86,17 @@
                 return this.Error("Passwords should be the same!");
             }
 
-            if (!this.userService.IsUsernameAvailable(username))
+            if (!this.usersService.IsUsernameAvailable(username))
             {
                 return this.Error("User already taken.");
             }
 
-            if (!this.userService.IsEmailAvailable(email))
+            if (!this.usersService.IsEmailAvailable(email))
             {
                 return this.Error("Email already taken.");
             }
 
-            var userId = this.userService.CreateUser(username, email, password);
+            var userId = this.usersService.CreateUser(username, email, password);
 
             return this.Successful("Successful registration :)");      
         }
