@@ -32,6 +32,10 @@
         public string GetUserId(string username, string password)
         {
             var user = this.db.Users.FirstOrDefault(x => x.Username == username);
+            if (user?.Password != ComputeHash(password))
+            {
+                return null;
+            }
             return user?.Id;
         }
 
