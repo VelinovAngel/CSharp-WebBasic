@@ -3,6 +3,7 @@
     using System;
     using System.IO;
     using System.Linq;
+    using System.Reflection;
     using System.Threading.Tasks;
     using System.Collections.Generic;
 
@@ -11,17 +12,19 @@
     using SUS.Http.Contracts;
     using SUS.MvcFramework.Contracts;
 
+
     public static class Host
     {
         public static async Task CreateHostAsync(IMvcApplication application, int port = 80)
         {
             List<Route> routeTable = new List<Route>();
+            IServiceCollection serviceCollection = new ServiceCollection();
+
+            application.ConfigureServices(serviceCollection);
+            application.Configure(routeTable);
 
             AutoRegisterStaticFiles(routeTable);
-            AutoRegisterRoutes(routeTable, application);
-
-            application.ConfigureServices();
-            application.Configure(routeTable);
+            AutoRegisterRoutes(routeTable, application, serviceCollection);
 
             Console.WriteLine("All register routes");
             foreach (var route in routeTable)
@@ -36,14 +39,14 @@
             await server.StartAsync(port);
         }
 
-        private static void AutoRegisterRoutes(List<Route> routeTable, IMvcApplication application)
+        private static void AutoRegisterRoutes(List<Route> routeTable, IMvcApplication application, IServiceCollection serviceCollection)
         {
-            var controllerTypes = application.GetType().Assembly.GetTypes().Where(x=>x.IsClass && !x.IsAbstract && x.IsSubclassOf(typeof(Controller)));
+            var controllerTypes = application.GetType().Assembly.GetTypes().Where(x => x.IsClass && !x.IsAbstract && x.IsSubclassOf(typeof(Controller)));
 
             foreach (var controllerType in controllerTypes)
             {
                 var methods = controllerType.GetMethods()
-                    .Where(x=>x.IsPublic && !x.IsStatic && x.DeclaringType == controllerType && !x.IsAbstract && !x.IsConstructor && !x.IsSpecialName);
+                    .Where(x => x.IsPublic && !x.IsStatic && x.DeclaringType == controllerType && !x.IsAbstract && !x.IsConstructor && !x.IsSpecialName);
                 foreach (var method in methods)
                 {
                     var url = "/" + controllerType.Name.Replace("Controller", string.Empty) + "/" + method.Name;
@@ -63,16 +66,37 @@
                         url = attributes.Url;
                     }
 
-                    routeTable.Add(new Route(url, httpMethod, (request) =>
-                    {
-                        var instance = Activator.CreateInstance(controllerType) as Controller;
-                        instance.Request = request;
-                        var response = method.Invoke(instance, new object[] { }) as HttpResponse;
-                        return response;
-                    }));
+                    routeTable.Add(new Route(url, httpMethod, (request) => ExecuteAction(request, controllerType, method, serviceCollection)));
                     Console.WriteLine($" - {url}");
                 }
             }
+        }
+
+        private static HttpResponse ExecuteAction(HttpRequest request, Type controllerType, MethodInfo action, IServiceCollection serviceCollection)
+        {
+            var instance = serviceCollection.CreateInstance(controllerType) as Controller;
+            instance.Request = request;
+            var arguments = new List<object>();
+
+            var parameters = action.GetParameters();
+            foreach (var parameter in parameters)
+            {
+                var parameterValue = GetParameterFromRequest(request, parameter.Name);
+                arguments.Add(parameterValue);
+            }
+
+            var response = action.Invoke(instance, arguments.ToArray()) as HttpResponse;
+            return response;
+        }
+
+        private static string GetParameterFromRequest(HttpRequest request, string parameterName)
+        {
+            if (request.FormData.ContainsKey(parameterName))
+            {
+                return request.FormData[parameterName];
+            }
+
+            return null;
         }
 
         private static void AutoRegisterStaticFiles(List<Route> routeTable)
