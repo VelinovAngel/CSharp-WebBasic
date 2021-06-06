@@ -27,11 +27,11 @@
             return this.View();
         }
 
-        [HttpPost("/Users/Login")]
-        public HttpResponse DoLogin()
+        [HttpPost]
+        public HttpResponse Login(string username, string password)
         {
-            var username = this.Request.FormData["username"];
-            var password = this.Request.FormData["password"];
+            //var username = this.Request.FormData["username"];
+            //var password = this.Request.FormData["password"];
             var userId = this.usersService.GetUserId(username, password);
 
             if (userId == null)
@@ -53,8 +53,8 @@
             return this.View();
         }
 
-        [HttpPost("/Users/Register")]
-        public HttpResponse DoRegister(string username , string email, string password, string confirmPassword)
+        [HttpPost]
+        public HttpResponse Register(string username , string email, string password, string confirmPassword)
         {
             //var username = this.Request.FormData["username"];
             //var email = this.Request.FormData["email"];

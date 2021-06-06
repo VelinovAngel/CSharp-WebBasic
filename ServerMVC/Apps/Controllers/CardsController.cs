@@ -1,5 +1,6 @@
 ﻿namespace BattleCards.Controllers
 {
+    using System;
     using System.Linq;
 
     using SUS.Http;
@@ -7,20 +8,22 @@
 
     using BattleCards.Data;
     using BattleCards.ViewModels.Cards;
-
+    using BattleCards.Services;
 
     public class CardsController : Controller
     {
+        private readonly ICardsService cardsService;
         private readonly ApplicationDbContext db;
 
-        public CardsController(ApplicationDbContext db)
+        public CardsController(ICardsService cardsService,ApplicationDbContext db)
         {
+            this.cardsService = cardsService;
             this.db = db;
         }
 
         public HttpResponse Add()
         {
-            if (this.IsUserSignIn())
+            if (!this.IsUserSignIn())
             {
                 return this.Redirect("/Users/Login");
             }
@@ -28,56 +31,72 @@
             return this.View();
         }
 
-        [HttpPost("/Cards/Add")]
-        public HttpResponse DoAdd(AddCardInputModel model)
+        [HttpPost]
+        public HttpResponse Add(AddCardInputModel model)
         {
-            if (this.Request.FormData["name"].Length < 5)
+            if (!this.IsUserSignIn())
             {
-                return this.Error("Name should be at least 5 characters long.");
+                return this.Redirect("/Users/Login");
             }
 
-            db.Cards.Add(new Card
+            if (string.IsNullOrEmpty(model.Name) || model.Name.Length < 5 || model.Name.Length > 15)
             {
-                Attack = model.Attack,
-                Health = model.Health,
-                Description = model.Description,
-                Name = model.Name,
-                ImageUrl = model.ImageUrl,
-                Keyword = model.Keyword,
-            });
+                return this.Error("Name should be between 5 and 15 characters long.");
+            }
 
-            db.SaveChanges();
+            if (string.IsNullOrWhiteSpace(model.ImageUrl) || !Uri.TryCreate(model.ImageUrl, UriKind.Absolute, out _))
+            {
+                return this.Error("Image is required!");
+            }
+
+            if (string.IsNullOrWhiteSpace(model.Keyword))
+            {
+                return this.Error("Keyword is required!");
+            }
+
+            if (model.Attack < 0 )
+            {
+                return this.Error("Attack should be non-negavite integer");
+            }
+
+            if (model.Health < 0)
+            {
+                return this.Error("Healt should be non-negavite integer");
+            }
+
+            if (string.IsNullOrWhiteSpace(model.Description) || model.Description.Length > 200)
+            {
+                return this.Error("Description is required and its lenght should be at most 200 characters");
+            }
+
+            this.cardsService.AddCard(model);
 
             return this.Redirect("/Cards/All");
         }
 
         public HttpResponse All()
         {
-            if (this.IsUserSignIn())
+            if (!this.IsUserSignIn())
             {
-                return this.Redirect("/");
+                return this.Redirect("/User/Login");
             }
 
-            var cardsViewModel = db.Cards.Select(x => new CardViewModel
-            {
-                Name = x.Name,
-                Attack = x.Attack,
-                Health = x.Health,
-                ImageUrl = x.ImageUrl,
-                Description = x.Description,
-                Type = x.Keyword,
-            }).ToList();
+            var cardsViewModel = cardsService.GetAll();
 
             return this.View(cardsViewModel);
         }
 
         public HttpResponse Collection()
         {
-            if (this.IsUserSignIn())
+            if (!this.IsUserSignIn())
             {
-                return this.Redirect("/");
+                return this.Redirect("/Users/Login");
             }
-            return this.View();
+
+            var userId = this.GetUserId();
+            var cards = this.cardsService.GetByUserId(userId);
+
+            return this.View(cards);
         }
     }
 }
