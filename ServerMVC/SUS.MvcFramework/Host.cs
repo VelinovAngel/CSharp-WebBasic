@@ -27,10 +27,14 @@
             AutoRegisterRoutes(routeTable, application, serviceCollection);
 
             Console.WriteLine("All register routes");
+            Console.WriteLine();
             foreach (var route in routeTable)
             {
                 Console.WriteLine($"{route.Method} - {route.Path}");
             }
+
+            Console.WriteLine();
+            Console.WriteLine("Requests:");
 
             IHttpServer server = new HttpServer(routeTable);
 
@@ -67,7 +71,7 @@
                     }
 
                     routeTable.Add(new Route(url, httpMethod, (request) => ExecuteAction(request, controllerType, method, serviceCollection)));
-                    Console.WriteLine($" - {url}");
+                    //Console.WriteLine($" - {url}");
                 }
             }
         }
@@ -82,7 +86,7 @@
             {
                 var httpParameterValue = GetParameterFromRequest(request, parameter.Name);
                 var parameterValue = Convert.ChangeType(httpParameterValue, parameter.ParameterType);
-                if (parameterValue == null && parameter.ParameterType != typeof(string))
+                if (parameterValue == null && parameter.ParameterType != typeof(string) && parameter.ParameterType != typeof(int?))
                 {
                     parameterValue = Activator.CreateInstance(parameter.ParameterType);
                     var properties = parameter.ParameterType.GetProperties();
@@ -104,14 +108,16 @@
         private static string GetParameterFromRequest(HttpRequest request, string parameterName)
         {
             parameterName = parameterName.ToLower();
-            if (request.FormData.Any(x=>x.Key == parameterName))
+            if (request.FormData.Any(x=>x.Key.ToLower() == parameterName))
             {
-                return request.FormData.FirstOrDefault(x => x.Key == parameterName).Value;
+                var value = request.FormData.FirstOrDefault(x => x.Key.ToLower() == parameterName).Value;
+                return value;
             }
 
-            if (request.QueryData.Any(x => x.Key == parameterName))
+            if (request.QueryData.Any(x => x.Key.ToLower() == parameterName))
             {
-                return request.QueryData.FirstOrDefault(x => x.Key == parameterName).Value;
+                var value = request.QueryData.FirstOrDefault(x => x.Key.ToLower() == parameterName).Value;
+                return value;
             }
 
             return null;

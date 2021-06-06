@@ -30,8 +30,6 @@
         [HttpPost]
         public HttpResponse Login(string username, string password)
         {
-            //var username = this.Request.FormData["username"];
-            //var password = this.Request.FormData["password"];
             var userId = this.usersService.GetUserId(username, password);
 
             if (userId == null)
@@ -56,11 +54,6 @@
         [HttpPost]
         public HttpResponse Register(string username , string email, string password, string confirmPassword)
         {
-            //var username = this.Request.FormData["username"];
-            //var email = this.Request.FormData["email"];
-            //var password = this.Request.FormData["password"];
-            //var confirmPassword = this.Request.FormData["confirmPassword"];
-
             if (username == null || username.Length < 5 || username.Length > 20)
             {
                 return this.Error("Invalid username. The username should be between 6 and 20 characters");

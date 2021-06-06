@@ -15,10 +15,9 @@
             this.db = db;
         }
 
-        public void AddCard(AddCardInputModel input)
+        public int AddCard(AddCardInputModel input)
         {
-
-            db.Cards.Add(new Card
+            var card = new Card
             {
                 Attack = input.Attack,
                 Health = input.Health,
@@ -26,14 +25,17 @@
                 Name = input.Name,
                 ImageUrl = input.ImageUrl,
                 Keyword = input.Keyword,
-            });
-
+            };
+            db.Cards.Add(card);
             db.SaveChanges();
+
+            return card.Id;
         }
 
         public IEnumerable<CardViewModel> GetAll()=> 
             db.Cards.Select(x => new CardViewModel
             {
+                Id = x.Id,
                 Name = x.Name,
                 Attack = x.Attack,
                 Health = x.Health,
@@ -56,9 +58,31 @@
                 })
                 .ToList();
 
-        public void RemoveCard()
+        public void AddCardToUserCollection(string userId, int cardId)
         {
-            throw new NotImplementedException();
+            if (this.db.UserCards.Any(x=>x.UserId == userId && x.CardId == cardId))
+            {
+                return;
+            }
+
+            this.db.UserCards.Add(new UserCard
+            {
+                CardId = cardId,
+                UserId = userId
+            });
+
+            this.db.SaveChanges();
+        }
+        public void RemoveCardFromUserCollection(string userId, int cardId)
+        {
+            var userCard = this.db.UserCards.FirstOrDefault(x => x.UserId == userId && x.CardId == cardId);
+            if (userCard == null)
+            {
+                return;
+            }
+
+            this.db.UserCards.Remove(userCard);
+            this.db.SaveChanges();
         }
     }
 }

@@ -13,12 +13,10 @@
     public class CardsController : Controller
     {
         private readonly ICardsService cardsService;
-        private readonly ApplicationDbContext db;
 
-        public CardsController(ICardsService cardsService,ApplicationDbContext db)
+        public CardsController(ICardsService cardsService, ApplicationDbContext db)
         {
             this.cardsService = cardsService;
-            this.db = db;
         }
 
         public HttpResponse Add()
@@ -54,7 +52,7 @@
                 return this.Error("Keyword is required!");
             }
 
-            if (model.Attack < 0 )
+            if (model.Attack < 0)
             {
                 return this.Error("Attack should be non-negavite integer");
             }
@@ -70,6 +68,9 @@
             }
 
             this.cardsService.AddCard(model);
+            var userId = GetUserId();
+            var cardId = this.cardsService.AddCard(model);
+            this.cardsService.AddCardToUserCollection(userId, cardId);
 
             return this.Redirect("/Cards/All");
         }
@@ -78,7 +79,7 @@
         {
             if (!this.IsUserSignIn())
             {
-                return this.Redirect("/User/Login");
+                return this.Redirect("/Users/Login");
             }
 
             var cardsViewModel = cardsService.GetAll();
@@ -97,6 +98,32 @@
             var cards = this.cardsService.GetByUserId(userId);
 
             return this.View(cards);
+        }
+
+        public HttpResponse AddToCollection(int cardId)
+        {
+            if (!this.IsUserSignIn())
+            {
+                return this.Redirect("/Users/Login");
+            }
+
+            var userId = GetUserId();
+            this.cardsService.AddCardToUserCollection(userId, cardId);
+
+            return this.Redirect("/Cards/All");
+        }
+
+        public HttpResponse RemoveFromCollection(int cardId)
+        {
+            if (!this.IsUserSignIn())
+            {
+                return this.Redirect("/Users/Login");
+            }
+
+            var userId = GetUserId();
+            this.cardsService.RemoveCardFromUserCollection(userId, cardId);
+
+            return this.Redirect("/Cards/Collection");
         }
     }
 }
