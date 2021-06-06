@@ -8,17 +8,17 @@
 
     public class ServiceCollection : IServiceCollection
     {
-        private readonly Dictionary<Type, Type> dependencyCOntainer = new();
+        private readonly Dictionary<Type, Type> dependencyContainer = new();
         public void Add<TSource, TDestionation>()
         {
-            this.dependencyCOntainer[typeof(TSource)] = typeof(TDestionation);
+            this.dependencyContainer[typeof(TSource)] = typeof(TDestionation);
         }
 
         public object CreateInstance(Type type)
         {
-            if (this.dependencyCOntainer.ContainsKey(type))
+            if (this.dependencyContainer.ContainsKey(type))
             {
-                type = this.dependencyCOntainer[type];
+                type = this.dependencyContainer[type];
             }
 
             var constructor = type.GetConstructors()

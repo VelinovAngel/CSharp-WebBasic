@@ -6,7 +6,7 @@
 
     public interface ICardsService
     {
-        void AddCard(AddCardInputModel input);
+        int AddCard(AddCardInputModel input);
         public IEnumerable<CardViewModel> GetAll();
         public IEnumerable<CardViewModel> GetByUserId(string userId);
         void AddCardToUserCollection(string userId, int cardId);
