@@ -1,7 +1,6 @@
 ﻿namespace BattleCards.Controllers
 {
     using System;
-    using System.Linq;
 
     using SUS.Http;
     using SUS.MvcFramework;
