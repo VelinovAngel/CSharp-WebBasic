@@ -6,7 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Data\" />
     <Folder Include="Controllers\" />
     <Folder Include="Services\" />
     <Folder Include="ViewModels\Home\" />
