@@ -7,7 +7,6 @@
 
   <ItemGroup>
     <Folder Include="Services\" />
-    <Folder Include="ViewModels\Home\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -54,7 +53,7 @@
     <None Update="wwwroot\css\reset-css.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="wwwroot\css\sire.css">
+    <None Update="wwwroot\css\site.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="wwwroot\css\text.css">

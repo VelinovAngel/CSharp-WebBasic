@@ -194,7 +194,6 @@ C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\CSharp-WebBasic\ServerMVC\Suls\obj\D
 C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\CSharp-WebBasic\ServerMVC\Suls\obj\Debug\net5.0\Suls.genruntimeconfig.cache
 C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\CSharp-WebBasic\ServerMVC\Suls\bin\Debug\net5.0\wwwroot\css\bootstrap.min.css
 C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\CSharp-WebBasic\ServerMVC\Suls\bin\Debug\net5.0\wwwroot\css\reset-css.css
-C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\CSharp-WebBasic\ServerMVC\Suls\bin\Debug\net5.0\wwwroot\css\sire.css
 C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\CSharp-WebBasic\ServerMVC\Suls\bin\Debug\net5.0\wwwroot\css\text.css
 C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\CSharp-WebBasic\ServerMVC\Suls\bin\Debug\net5.0\Views\Home\Index.cshtml
 C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\CSharp-WebBasic\ServerMVC\Suls\bin\Debug\net5.0\Views\Home\IndexLoggedIn.cshtml
@@ -204,3 +203,4 @@ C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\CSharp-WebBasic\ServerMVC\Suls\bin\D
 C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\CSharp-WebBasic\ServerMVC\Suls\bin\Debug\net5.0\Views\Submissions\Create.cshtml
 C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\CSharp-WebBasic\ServerMVC\Suls\bin\Debug\net5.0\Views\Users\Login.cshtml
 C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\CSharp-WebBasic\ServerMVC\Suls\bin\Debug\net5.0\Views\Users\Register.cshtml
+C:\Users\nik_w\OneDrive\Desktop\SoftUni\Git\CSharp-WebBasic\ServerMVC\Suls\bin\Debug\net5.0\wwwroot\css\site.css
