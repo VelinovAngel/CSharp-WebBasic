@@ -16,7 +16,6 @@
 
         public void ConfigureServices(IServiceCollection serviceCollection)
         {
-            throw new System.NotImplementedException();
         }
     }
 }

@@ -1,12 +1,14 @@
-﻿using System;
-
-namespace Suls
+﻿namespace Suls
 {
+    using System.Threading.Tasks;
+
+    using SUS.MvcFramework;
+
     class Program
     {
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
-            
+            await  Host.CreateHostAsync(new StartUp(), 80);
         }
     }
 }
