@@ -6231,11 +6231,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\nik_w\\OneDrive\\Desktop\\SoftUni\\Git\\C# Web Basics\\ServerMVC\\Suls\\Suls.csproj",
+      "projectUniqueName": "C:\\Users\\nik_w\\OneDrive\\Desktop\\SoftUni\\Git\\CSharp-WebBasic\\ServerMVC\\Suls\\Suls.csproj",
       "projectName": "Suls",
-      "projectPath": "C:\\Users\\nik_w\\OneDrive\\Desktop\\SoftUni\\Git\\C# Web Basics\\ServerMVC\\Suls\\Suls.csproj",
+      "projectPath": "C:\\Users\\nik_w\\OneDrive\\Desktop\\SoftUni\\Git\\CSharp-WebBasic\\ServerMVC\\Suls\\Suls.csproj",
       "packagesPath": "C:\\Users\\nik_w\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\nik_w\\OneDrive\\Desktop\\SoftUni\\Git\\C# Web Basics\\ServerMVC\\Suls\\obj\\",
+      "outputPath": "C:\\Users\\nik_w\\OneDrive\\Desktop\\SoftUni\\Git\\CSharp-WebBasic\\ServerMVC\\Suls\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\nik_w\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -6252,11 +6252,11 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\nik_w\\OneDrive\\Desktop\\SoftUni\\Git\\C# Web Basics\\ServerMVC\\SUS.Http\\SUS.Http.csproj": {
-              "projectPath": "C:\\Users\\nik_w\\OneDrive\\Desktop\\SoftUni\\Git\\C# Web Basics\\ServerMVC\\SUS.Http\\SUS.Http.csproj"
+            "C:\\Users\\nik_w\\OneDrive\\Desktop\\SoftUni\\Git\\CSharp-WebBasic\\ServerMVC\\SUS.Http\\SUS.Http.csproj": {
+              "projectPath": "C:\\Users\\nik_w\\OneDrive\\Desktop\\SoftUni\\Git\\CSharp-WebBasic\\ServerMVC\\SUS.Http\\SUS.Http.csproj"
             },
-            "C:\\Users\\nik_w\\OneDrive\\Desktop\\SoftUni\\Git\\C# Web Basics\\ServerMVC\\SUS.MvcFramework\\SUS.MvcFramework.csproj": {
-              "projectPath": "C:\\Users\\nik_w\\OneDrive\\Desktop\\SoftUni\\Git\\C# Web Basics\\ServerMVC\\SUS.MvcFramework\\SUS.MvcFramework.csproj"
+            "C:\\Users\\nik_w\\OneDrive\\Desktop\\SoftUni\\Git\\CSharp-WebBasic\\ServerMVC\\SUS.MvcFramework\\SUS.MvcFramework.csproj": {
+              "projectPath": "C:\\Users\\nik_w\\OneDrive\\Desktop\\SoftUni\\Git\\CSharp-WebBasic\\ServerMVC\\SUS.MvcFramework\\SUS.MvcFramework.csproj"
             }
           }
         }

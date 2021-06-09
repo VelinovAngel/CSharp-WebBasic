@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "BD49BBfU63w6t+cx69cT6tyCp6EynVER2vOgxmGKOEv/85mHQXCrqnJyF2LE5U6o4CgFrylxGOvMizEUbqDhkw==",
+  "dgSpecHash": "QVLX0KFYndD0UwjdmXS1GJ64piUwmlPy2XGBqDa/9a7QWy5rSil51RrNGOeN7y2ZZ1dFkBwk49ZA1LCtclSF4g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\nik_w\\OneDrive\\Desktop\\SoftUni\\Git\\C# Web Basics\\ServerMVC\\Suls\\Suls.csproj",
+  "projectFilePath": "C:\\Users\\nik_w\\OneDrive\\Desktop\\SoftUni\\Git\\CSharp-WebBasic\\ServerMVC\\Suls\\Suls.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\nik_w\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\nik_w\\.nuget\\packages\\microsoft.codeanalysis.analyzers\\3.0.0\\microsoft.codeanalysis.analyzers.3.0.0.nupkg.sha512",

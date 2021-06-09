@@ -66,7 +66,6 @@
                 return this.Error("Description is required and its lenght should be at most 200 characters");
             }
 
-            this.cardsService.AddCard(model);
             var userId = GetUserId();
             var cardId = this.cardsService.AddCard(model);
             this.cardsService.AddCardToUserCollection(userId, cardId);
