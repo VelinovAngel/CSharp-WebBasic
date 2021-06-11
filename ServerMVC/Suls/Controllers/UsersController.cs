@@ -20,7 +20,7 @@
             return this.View();
         }
 
-        [HttpPost("Users/Login")]
+        [HttpPost]
         public HttpResponse Login(string username , string password)
         {
             var userId = this.userService.GetUserId(username, password);
@@ -38,6 +38,7 @@
             return this.View();
         }
 
+        [HttpPost]
         public HttpResponse Register(UserViewModel model)
         {
             if (string.IsNullOrEmpty(model.Username) || model.Username.Length < 5 || model.Username.Length > 20)
@@ -68,6 +69,18 @@
             userService.CreateUser(model.Username, model.Email, model.Password);
 
             return this.Redirect("/Users/Login");
+        }
+
+        public HttpResponse Logout()
+        {
+            if (!IsUserSignIn())
+            {
+                this.Error("Only logged-in user can logout!");
+
+            }
+
+            this.SignOut();
+            return this.Redirect("/");
         }
     }
 }
