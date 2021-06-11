@@ -2,14 +2,14 @@
 {
     using Microsoft.EntityFrameworkCore;
 
-    public class DbApplicantionContext : DbContext
+    public class DbApplicationContext : DbContext
     {
         private const string SqlServer = @"Server=.\SQLEXPRESS;Database=Suls;Integrated Security=TRUE";
 
-        public DbApplicantionContext()
+        public DbApplicationContext()
         {
         }
-        public DbApplicantionContext(DbContextOptions dbContextOptions)
+        public DbApplicationContext(DbContextOptions dbContextOptions)
             :base(dbContextOptions)
         { 
         }

@@ -8,7 +8,7 @@ using Suls.Data;
 
 namespace Suls.Migrations
 {
-    [DbContext(typeof(DbApplicantionContext))]
+    [DbContext(typeof(DbApplicationContext))]
     partial class DbApplicantionContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

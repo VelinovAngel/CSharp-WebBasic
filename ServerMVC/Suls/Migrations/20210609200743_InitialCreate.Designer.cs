@@ -9,7 +9,7 @@ using Suls.Data;
 
 namespace Suls.Migrations
 {
-    [DbContext(typeof(DbApplicantionContext))]
+    [DbContext(typeof(DbApplicationContext))]
     [Migration("20210609200743_InitialCreate")]
     partial class InitialCreate
     {
