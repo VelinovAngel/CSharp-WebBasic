@@ -20,7 +20,7 @@
                     <tr class="row">
                         <td class="col-lg-3 suls-text-color">@submission.Username</td>
                         <td class="col-lg-3 suls-text-color">@submission.AchievedResult / @submission.MaxPoints (@submission.Percentage %)</td>
-                        <td class="col-lg-3 suls-text-color">@submission.CreatedOn</td>
+                        <td class="col-lg-3 suls-text-color">@submission.CreatedOn.ToShortDateString()</td>
                         <td class="col-lg-3 suls-text-color">
                             <div class="button-holder">
                                 <a href="/Submissions/Delete?id=@submission.SubmissionId" class="btn btn-warning">Delete</a>

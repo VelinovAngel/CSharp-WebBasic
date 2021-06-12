@@ -1,7 +1,7 @@
 ﻿namespace Suls.Controllers
 {
     using Suls.Services;
-    using Suls.ViewModels.Problems;
+
     using SUS.Http;
     using SUS.MvcFramework;
 
@@ -16,6 +16,10 @@
 
         public HttpResponse Create()
         {
+            if (!this.IsUserSignIn())
+            {
+                return this.Redirect("/Users/Register");
+            }
             return this.View();
         }
 
@@ -24,11 +28,11 @@
         {
             if (name.Length < 5 || name.Length > 20 || string.IsNullOrEmpty(name))
             {
-                this.Error("Invalid problem name!");
+                return this.Redirect("/Problems/Create");
             }
-            if (points < 50 || points > 300)
+            if (string.IsNullOrEmpty(points.ToString()) || points < 50 || points > 300)
             {
-                this.Error("Invalid points!");
+                return this.Redirect("/Problems/Create");
             }
             problemService.CreateProblem(name, points);
 
@@ -38,6 +42,10 @@
         
         public HttpResponse Details(string id)
         {
+            if (!this.IsUserSignIn())
+            {
+                return this.Redirect("/Users/Register");
+            }
             var viewModel = this.problemService.GetById(id);
             
             return this.View(viewModel);

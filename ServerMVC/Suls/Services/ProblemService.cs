@@ -1,10 +1,12 @@
-﻿using Suls.Data;
-using Suls.ViewModels.Problems;
-using System.Collections.Generic;
-using System.Linq;
-
-namespace Suls.Services
+﻿namespace Suls.Services
 {
+    using System.Linq;
+    using System.Collections.Generic;
+
+    using Suls.Data;
+    using Suls.ViewModels.Problems;
+
+
     public class ProblemService : IProblemService
     {
         private readonly DbApplicationContext db;
@@ -51,7 +53,7 @@ namespace Suls.Services
                                        AchievedResult = s.AchievedResult,
                                        Username = s.User.Username,
                                        MaxPoints = s.Problem.Points,
-                                       Percentage = $"{(s.AchievedResult / 1.0 * s.Problem.Points) / 100:F2}".ToString()
+                                       Percentage = $"{(s.AchievedResult / (1.0 * s.Problem.Points)) * 100.00:F2}".ToString()
                                    })
                                })
                                .FirstOrDefault();

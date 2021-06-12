@@ -35,5 +35,13 @@
             this.db.Submissions.Add(submission);
             this.db.SaveChanges();
         }
+
+        public void Delete(string problemId)
+        {
+            var submission = this.db.Submissions
+                .FirstOrDefault(x => x.Id == problemId);
+            this.db.Submissions.Remove(submission);
+            this.db.SaveChanges();
+        }
     }
 }

@@ -3,8 +3,9 @@
     using System.ComponentModel.DataAnnotations;
 
     using SUS.Http;
-    using Suls.Services;
     using SUS.MvcFramework;
+
+    using Suls.Services;
     using Suls.ViewModels.Users;
 
     public class UsersController : Controller
@@ -17,6 +18,10 @@
         }
         public HttpResponse Login()
         {
+            if (this.IsUserSignIn())
+            {
+                return this.Redirect("/");
+            }
             return this.View();
         }
 
@@ -35,6 +40,10 @@
 
         public HttpResponse Register()
         {
+            if (this.IsUserSignIn())
+            {
+                return this.Redirect("/");
+            }
             return this.View();
         }
 
@@ -73,7 +82,7 @@
 
         public HttpResponse Logout()
         {
-            if (!IsUserSignIn())
+            if (!this.IsUserSignIn())
             {
                 this.Error("Only logged-in user can logout!");
 
