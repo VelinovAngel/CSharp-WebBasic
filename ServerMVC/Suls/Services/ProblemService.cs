@@ -1,4 +1,7 @@
 ﻿using Suls.Data;
+using Suls.ViewModels.Problems;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Suls.Services
 {
@@ -23,9 +26,34 @@ namespace Suls.Services
             this.db.SaveChanges();
         }
 
-        public string GetProblemId(string name)
-        {
-            throw new System.NotImplementedException();
-        }
+        public IEnumerable<HomePageViewModel> GetAll()
+                 => db.Problems.Select(x => new HomePageViewModel
+                 {
+                     Id = x.Id,
+                     Name = x.Name,
+                     Count = x.Submissions.Count()
+                 })
+            .ToList();
+
+        public string GetNameById(string id)
+            => this.db.Problems.FirstOrDefault(x => x.Id == id)?.Name;
+
+
+        public ProblemViewModel GetById(string id)
+            => this.db.Problems.Where(x => x.Id == id)
+                               .Select(x => new ProblemViewModel
+                               {
+                                   Name = x.Name,
+                                   Submissions = x.Submissions.Select(s => new SubmissionViewModel
+                                   {
+                                       CreatedOn = s.CreatedOn,
+                                       SubmissionId = s.Id,
+                                       AchievedResult = s.AchievedResult,
+                                       Username = s.User.Username,
+                                       MaxPoints = s.Problem.Points,
+                                       Percentage = $"{(s.AchievedResult / 1.0 * s.Problem.Points) / 100:F2}".ToString()
+                                   })
+                               })
+                               .FirstOrDefault();
     }
 }

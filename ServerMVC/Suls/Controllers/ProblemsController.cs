@@ -1,6 +1,7 @@
 ﻿namespace Suls.Controllers
 {
     using Suls.Services;
+    using Suls.ViewModels.Problems;
     using SUS.Http;
     using SUS.MvcFramework;
 
@@ -30,7 +31,16 @@
                 this.Error("Invalid points!");
             }
             problemService.CreateProblem(name, points);
-            return this.View();
+
+            return this.Redirect("/");
+        }
+
+        
+        public HttpResponse Details(string id)
+        {
+            var viewModel = this.problemService.GetById(id);
+            
+            return this.View(viewModel);
         }
     }
 }

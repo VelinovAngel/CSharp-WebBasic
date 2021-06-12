@@ -18,12 +18,14 @@
 
         [Required]
         [MaxLength(300)]
-        public int ArchievedResult { get; set; }
+        public int AchievedResult { get; set; }
 
         public DateTime CreatedOn { get; set; }
 
-        public Problem Problem { get; set; }
+        public string ProblemId { get; set; }
+        public virtual Problem Problem { get; set; }
 
-        public User User { get; set; }
+        public string UserId { get; set; }
+        public virtual User User { get; set; }
     }
 }
