@@ -8,12 +8,12 @@ namespace SharedTrip
     {
         public void Configure(List<Route> routeTable)
         {
-            throw new System.NotImplementedException();
+            
         }
 
         public void ConfigureServices(IServiceCollection serviceCollection)
         {
-            throw new System.NotImplementedException();
         }
     }
 }
+           

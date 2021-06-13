@@ -5,7 +5,7 @@ namespace SharedTrip
 {
     public class Program
     {
-        static async Task Main(string[] args)
+        public static async Task Main(string[] args)
         {
             await Host.CreateHostAsync(new StartUp(), 80);
         }
