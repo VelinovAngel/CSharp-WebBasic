@@ -15,7 +15,19 @@ namespace SharedTrip.Controllers
         }
         public HttpResponse All()
         {
-            return this.View();
+            if (!this.IsUserSignIn())
+            {
+                return this.Redirect("/Users/Register");
+            }
+            var trips = tripsService.GetAllTrips();
+            return this.View(trips);
+        }
+
+        
+        public HttpResponse Details(string tripId)
+        {
+            var details = tripsService.GetAllDetails(tripId);
+            return this.View(details);
         }
 
         public HttpResponse Add()
