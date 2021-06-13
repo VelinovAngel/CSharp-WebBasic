@@ -10,5 +10,6 @@ namespace SharedTrip.Controllers
         {
             return this.View();
         }
+
     }
 }

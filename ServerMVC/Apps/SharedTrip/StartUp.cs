@@ -1,5 +1,6 @@
 ﻿using SUS.Http;
 using SharedTrip.Data;
+using SharedTrip.Services;
 using SUS.MvcFramework.Contracts;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
@@ -15,6 +16,8 @@ namespace SharedTrip
 
         public void ConfigureServices(IServiceCollection serviceCollection)
         {
+            serviceCollection.Add<IUserService, UserService>();
+            serviceCollection.Add<ITripsService, TripsService>();
         }
     }
 }

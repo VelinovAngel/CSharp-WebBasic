@@ -66,11 +66,11 @@
             {
                 this.Error("Invalid password!");
             }
-            if (userService.IsEmailAvailable(model.Email))
+            if (!userService.IsEmailAvailable(model.Email))
             {
                 this.Error("Email already taken");
             }
-            if (userService.IsUserAvailable(model.Username))
+            if (!userService.IsUserAvailable(model.Username))
             {
                 this.Error("Username already taken");
             }
