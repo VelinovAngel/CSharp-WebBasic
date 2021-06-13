@@ -4,7 +4,7 @@
     {
         public string StartPoint { get; set; }
 
-        public string EndPoints { get; set; }
+        public string EndPoint { get; set; }
 
         public string DepartureTime { get; set; }
 
