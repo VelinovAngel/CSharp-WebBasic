@@ -23,7 +23,14 @@ namespace SharedTrip.Controllers
         [HttpPost("/Users/Login")]
         public HttpResponse Login(UsersViewModelLogin model)
         {
-            return this.View();
+            var userId = userService.GetUserId(model.Username, model.Password);
+            if (userId == null)
+            {
+                return this.Error("Invald username or password");
+            }
+            this.SignIn(userId);
+
+            return this.Redirect("/Trips/All");
         }
 
         public HttpResponse Register()
@@ -65,6 +72,16 @@ namespace SharedTrip.Controllers
             }
 
             userService.CreateUser(username, email, password);
+            return this.Redirect("/");
+        }
+
+        public HttpResponse Logout()
+        {
+            if (!IsUserSignIn())
+            {
+                this.Error("Only logged-in user can logout!");
+            }
+            this.SignOut();
             return this.Redirect("/");
         }
     }
