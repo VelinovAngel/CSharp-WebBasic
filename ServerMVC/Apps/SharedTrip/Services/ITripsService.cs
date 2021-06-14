@@ -13,7 +13,7 @@ namespace SharedTrip.Services
 
         void AddUserToTrip(string userId, string tripId);
 
-        void RemoveUserFromTrip(string tripId);
+        void RemoveUserFromTrip(string tripId, string userId);
 
         public IEnumerable<PassengersViewModel> GetAllPassengers(string tripId);
 

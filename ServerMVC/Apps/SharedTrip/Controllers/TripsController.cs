@@ -89,6 +89,8 @@ namespace SharedTrip.Controllers
                 return this.Redirect("/Users/Login");
             }
 
+            var userId = this.GetUserId();
+            tripsService.RemoveUserFromTrip(tripId, userId);
 
             return this.Redirect("/Trips/All");
         }

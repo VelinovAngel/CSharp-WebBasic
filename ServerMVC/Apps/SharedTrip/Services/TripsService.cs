@@ -95,5 +95,19 @@ namespace SharedTrip.Services
                 ImagePath = x.Trip.ImagePath,
             })
             .ToList();
+
+        public void RemoveUserFromTrip(string tripId, string userId)
+        {
+            var userInTrip = this.db.UserTrips
+                .FirstOrDefault(x => x.TripId == tripId && x.UserId == userId);
+
+            if (userInTrip == null)
+            {
+                return;
+            }
+
+            this.db.UserTrips.Remove(userInTrip);
+            this.db.SaveChanges();
+        }
     }
 }
