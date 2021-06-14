@@ -1,7 +1,7 @@
 ﻿using SUS.Http;
 using SUS.MvcFramework;
-using SharedTrip.ViewModels;
 using SharedTrip.Services;
+using SharedTrip.ViewModels;
 
 namespace SharedTrip.Controllers
 {
@@ -22,8 +22,7 @@ namespace SharedTrip.Controllers
             var trips = tripsService.GetAllTrips();
             return this.View(trips);
         }
-
-        
+     
         public HttpResponse Details(string tripId)
         {
             if (!this.IsUserSignIn())
@@ -46,7 +45,11 @@ namespace SharedTrip.Controllers
         [HttpPost]
         public HttpResponse Add(TripsViewModel model)
         {
-            
+            if (!this.IsUserSignIn())
+            {
+                return this.Redirect("/Users/Login");
+            }
+
             if (model.Seats < 2 || model.Seats > 6)
             {
                 return this.Error("Invalid seats!");
@@ -97,6 +100,10 @@ namespace SharedTrip.Controllers
 
         public HttpResponse Passengers(string tripId)
         {
+            if (!this.IsUserSignIn())
+            {
+                return this.Redirect("/Users/Login");
+            }
             var model = this.tripsService.GetAllPassengers(tripId);
             return this.View(model);
         }
