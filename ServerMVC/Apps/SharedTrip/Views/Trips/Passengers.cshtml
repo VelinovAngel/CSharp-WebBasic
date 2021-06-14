@@ -1,0 +1,27 @@
+﻿<section class="py-5">
+    <div class="container">
+        <h1 style="margin: 2%; text-align: center;">Trip</h1>
+        <div>
+            <div class="button-holder">
+                <a href="/Trips/All" class="btn btn-info text-uppercase">Back</a>
+            </div>
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Passenger Name</th>
+                        <th scope="col">Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var passenger in Model)
+                    {
+                        <tr>
+                            <th scope="row">@passenger.Name</th>
+                            <td>@passenger.Email</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>

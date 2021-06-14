@@ -26,6 +26,10 @@ namespace SharedTrip.Controllers
         
         public HttpResponse Details(string tripId)
         {
+            if (!this.IsUserSignIn())
+            {
+                return this.Redirect("/Users/Register");
+            }
             var details = tripsService.GetAllDetails(tripId);
             return this.View(details);
         }
@@ -55,10 +59,44 @@ namespace SharedTrip.Controllers
             {
                 return this.Error("StatPoint and EndPoint are required!");
             }
-            var userId = GetUserId();
-            tripsService.AddTrip(model, userId);
+
+            tripsService.AddTrip(model);
+            return this.Redirect("/Trips/All");
+        }
+
+        public HttpResponse AddUserToTrip(string tripId)
+        {
+            if (!this.IsUserSignIn())
+            {
+                return this.Redirect("/Users/Login");
+            }
+
+            if (!this.tripsService.HasAvailabeSeats(tripId))
+            {
+                return this.Error("No available seats!");
+            }
+
+            var userId = this.GetUserId();
+            this.tripsService.AddUserToTrip(userId, tripId);
 
             return this.Redirect("/Trips/All");
+        }
+
+        public HttpResponse RemoveUserFromTrip(string tripId)
+        {
+            if (!this.IsUserSignIn())
+            {
+                return this.Redirect("/Users/Login");
+            }
+
+
+            return this.Redirect("/Trips/All");
+        }
+
+        public HttpResponse Passengers(string tripId)
+        {
+            var model = this.tripsService.GetAllPassengers(tripId);
+            return this.View(model);
         }
     }
 }

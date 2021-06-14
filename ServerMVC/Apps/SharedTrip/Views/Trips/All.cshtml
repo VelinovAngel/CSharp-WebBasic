@@ -10,6 +10,7 @@
                         <th scope="col">DepartureTime</th>
                         <th scope="col">Seats</th>
                         <th scope="col">Details</th>
+                        <th scope="col">Passengers</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -23,6 +24,11 @@
                         <td>
                             <div class="button-holder">
                                 <a href="/Trips/Details?tripId=@trip.Id" class="btn btn-info text-uppercase">Info</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="button-holder">
+                                <a href="/Trips/Passengers?tripId=@trip.Id" class="btn btn-info text-uppercase">View</a>
                             </div>
                         </td>
                     </tr>

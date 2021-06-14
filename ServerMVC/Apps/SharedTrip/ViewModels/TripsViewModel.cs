@@ -14,8 +14,6 @@
 
         public int Seats { get; set; }
 
-        public int UsedSeats { get; set; }
-
         public string Description { get; set; }
     }
 }
