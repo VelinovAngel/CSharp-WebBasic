@@ -2,23 +2,24 @@
 {
     using System;
     using System.Collections.Generic;
-
+    using System.ComponentModel.DataAnnotations;
 
     public class  Commit
     {
-        public Commit()
-        {
-            this.Id = Guid.NewGuid().ToString();
-            this.Repositories = new HashSet<Repository>();
-        }
         public string Id { get; set; }
 
-        public string Username { get; set; }
+        [Required]
+        [MaxLength(5)]
+        public string Description { get; set; }
 
-        public string Email { get; set; }
+        public DateTime CreatedOn { get; set; }
 
-        public string Password { get; set; }
+        public string CreatorId { get; set; }
 
-        public ICollection<Repository> Repositories { get; set; }
+        public User Creator { get; set; }
+
+        public string RepositoryId { get; set; }
+
+        public Repository Repository { get; set; }
     }
 }
