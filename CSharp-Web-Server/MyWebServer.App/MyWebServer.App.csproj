@@ -20,6 +20,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Views\Error.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="wwwroot\img\" />
   </ItemGroup>
 
