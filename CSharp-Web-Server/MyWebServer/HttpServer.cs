@@ -36,7 +36,7 @@
         }
 
         private HttpServer(IRoutingTable routingTable)
-            : this(80, routingTable)
+            : this(5000, routingTable)
         {
         }
 
@@ -54,6 +54,21 @@
         public HttpServer WithServices(Action<IServiceCollection> serviceCollectionConfiguration)
         {
             serviceCollectionConfiguration(this.serviceCollection);
+
+            return this;
+        }
+
+        public HttpServer WithConfiguration<TService>(Action<TService> configuration)
+            where TService : class
+        {
+            var service = this.serviceCollection.Get<TService>();
+
+            if (service == null)
+            {
+                throw new InvalidOperationException($"Service {typeof(TService).FullName} is not registered.");
+            }
+
+            configuration(service);
 
             return this;
         }
@@ -129,7 +144,7 @@
             if (request.Session.IsNew)
             {
                 response.Cookies.Add(HttpSession.SessionCookieName, request.Session.Id);
-
+                
                 request.Session.IsNew = false;
             }
         }
