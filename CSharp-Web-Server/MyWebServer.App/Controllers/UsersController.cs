@@ -65,8 +65,11 @@
             return this.Redirect("/Users/Login");
         }
 
+        [Authorize]
         public HttpResponse Logout()
         {
+            this.SignOut();
+
             return this.Redirect("/");
         }
     }

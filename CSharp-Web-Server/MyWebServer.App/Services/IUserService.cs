@@ -9,5 +9,7 @@ namespace MyWebServer.App.Services
         bool IsAvalaibleUser(string username);
 
         bool IsAvailableEmail(string email);
+
+        string GetUserId(string username, string password);
     }
 }

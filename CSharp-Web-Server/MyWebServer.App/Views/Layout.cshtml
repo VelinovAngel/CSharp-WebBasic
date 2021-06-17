@@ -30,16 +30,22 @@
                         </li>
                     </ul>
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a class="btn btn-lg text-white" href="/Users/Login">Login</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="btn btn-lg text-white" href="/Users/Register">Register</a>
-                        </li>
+                        @if (User == null)
+                        {
+                            <li class="nav-item">
+                                <a class="btn btn-lg text-white" href="/Users/Login">Login</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="btn btn-lg text-white" href="/Users/Register">Register</a>
+                            </li>
 
+                        }
+                        @else
+                        {
                         <li class="nav-item">
                             <a class="btn btn-lg text-white" href="/Users/Logout">Logout</a>
                         </li>
+                        }
                     </ul>
                 </div>
             </div>

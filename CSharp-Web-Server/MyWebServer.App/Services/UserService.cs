@@ -29,6 +29,13 @@
             this.db.SaveChanges();
         }
 
+        public string GetUserId(string username, string password)
+        {
+            var userId = this.db.Users
+                .FirstOrDefault(x => x.Username == username && x.Password == ComputeHash(password));
+            return userId?.Id;
+        }
+
         public bool IsAvailableEmail(string email)
             => !this.db.Users.Any(x => x.Email == email);
         public bool IsAvalaibleUser(string username)
