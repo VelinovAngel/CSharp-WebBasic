@@ -36,7 +36,7 @@
         }
 
         private HttpServer(IRoutingTable routingTable)
-            : this(5000, routingTable)
+            : this(80, routingTable)
         {
         }
 
@@ -65,7 +65,7 @@
 
             if (service == null)
             {
-                throw new InvalidOperationException($"Service {typeof(TService).FullName} is not registered.");
+                throw new InvalidOperationException($"Service '{typeof(TService).FullName}' is not registered.");
             }
 
             configuration(service);
