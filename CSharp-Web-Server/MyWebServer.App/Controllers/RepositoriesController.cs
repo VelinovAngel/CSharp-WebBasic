@@ -1,9 +1,9 @@
 ﻿namespace MyWebServer.App.Controllers
 {
+    using MyWebServer.Http;
+    using MyWebServer.Controllers;
     using MyWebServer.App.Services;
     using MyWebServer.App.ViewModels.Repositories;
-    using MyWebServer.Controllers;
-    using MyWebServer.Http;
 
     public class RepositoriesController : Controller
     {
@@ -38,7 +38,7 @@
 
             repositoriesService.CreateRepository(model, userId);
 
-            return this.View();
+            return this.Redirect("/Repositories/All");
         }
     }
 }
