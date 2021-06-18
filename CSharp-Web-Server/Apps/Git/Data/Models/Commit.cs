@@ -5,10 +5,14 @@
 
     public class  Commit
     {
+        public Commit()
+        {
+            this.Id = Guid.NewGuid().ToString();
+        }
+
         public string Id { get; set; }
 
         [Required]
-        [MaxLength(5)]
         public string Description { get; set; }
 
         public DateTime CreatedOn { get; set; }

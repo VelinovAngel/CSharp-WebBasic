@@ -10,6 +10,6 @@
 
         public string CreatedOn { get; init; }
 
-        public int CommitsCout { get; init; }
+        public int Commits { get; init; }
     }
 }

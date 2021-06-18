@@ -38,7 +38,7 @@
                 Name = x.Name,
                 CreatedOn = x.CreatedOn.ToString("g"),
                 Owner = x.Owner.Username,
-                CommitsCout = x.Commits.Count()
+                Commits = x.Commits.Count()
             })
             .ToList();
 

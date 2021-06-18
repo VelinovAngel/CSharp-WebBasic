@@ -17,10 +17,11 @@
                     .MapControllers())
                 .WithServices(services => services
                 .Add<IViewEngine, CompilationViewEngine>()
-                .Add<IUserService,UserService>()
+                .Add<IUserService, UserService>()
                 .Add<IRepositoriesService, RepositoriesService>()
+                .Add<ICommitsService, CommitsService>()
                 .Add<ApplicationDbContext>())
-                .WithConfiguration<ApplicationDbContext>(c=>c.Database.Migrate())
+                .WithConfiguration<ApplicationDbContext>(c => c.Database.Migrate())
                 .Start();
     }
 }
