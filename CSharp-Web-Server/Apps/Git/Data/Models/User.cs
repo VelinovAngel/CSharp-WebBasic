@@ -1,4 +1,4 @@
-﻿namespace MyWebServer.App.Data.Models
+﻿namespace Git.Data.Models
 {
     using System;
     using System.Collections.Generic;

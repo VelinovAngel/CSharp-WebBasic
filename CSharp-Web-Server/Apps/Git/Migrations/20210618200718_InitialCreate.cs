@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace MyWebServer.App.Migrations
+namespace Git.Migrations
 {
     public partial class InitialCreate : Migration
     {

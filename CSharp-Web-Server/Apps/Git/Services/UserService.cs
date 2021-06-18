@@ -1,12 +1,12 @@
-﻿namespace MyWebServer.App.Services
+﻿namespace Git.Services
 {
     using System;
     using System.Linq;
     using System.Security.Cryptography;
     using System.Text;
-    using MyWebServer.App.Data;
-    using MyWebServer.App.Data.Models;
-    using MyWebServer.App.ViewModels.Users;
+    using Git.Data;
+    using Git.Data.Models;
+    using Git.ViewModels.Users;
 
     public class UserService : IUserService
     {

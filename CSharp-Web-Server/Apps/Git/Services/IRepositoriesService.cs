@@ -1,6 +1,6 @@
-﻿namespace MyWebServer.App.Services
+﻿namespace Git.Services
 {
-    using MyWebServer.App.ViewModels.Repositories;
+    using Git.ViewModels.Repositories;
     using System.Collections.Generic;
 
     public interface IRepositoriesService

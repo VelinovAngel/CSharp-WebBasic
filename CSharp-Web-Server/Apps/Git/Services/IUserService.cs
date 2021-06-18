@@ -1,7 +1,8 @@
-﻿using MyWebServer.App.ViewModels.Users;
-
-namespace MyWebServer.App.Services
+﻿namespace Git.Services
 {
+    using Git.ViewModels.Users;
+
+
     public interface IUserService
     {
         void Register(RegisterUserModel model);

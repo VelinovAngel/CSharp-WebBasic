@@ -1,9 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-
-namespace MyWebServer.App.Data.Models
+﻿namespace Git.Data.Models
 {
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+
+
     public class Repository
     {
         public Repository()

@@ -1,4 +1,4 @@
-﻿namespace MyWebServer.App.Controllers
+﻿namespace Git.Controllers
 {
     using MyWebServer.Controllers;
     using MyWebServer.Http;

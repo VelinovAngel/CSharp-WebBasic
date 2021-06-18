@@ -1,4 +1,4 @@
-﻿namespace MyWebServer.App.ViewModels.Users
+﻿namespace Git.ViewModels.Users
 {
     public class RegisterUserModel
     {

@@ -1,9 +1,9 @@
-﻿namespace MyWebServer.App.Controllers
+﻿namespace Git.Controllers
 {
     using MyWebServer.Http;
     using MyWebServer.Controllers;
-    using MyWebServer.App.Services;
-    using MyWebServer.App.ViewModels.Repositories;
+    using Git.Services;
+    using Git.ViewModels.Repositories;
 
     public class RepositoriesController : Controller
     {

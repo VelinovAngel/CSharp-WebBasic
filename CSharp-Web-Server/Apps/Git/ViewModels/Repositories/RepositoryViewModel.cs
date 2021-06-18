@@ -1,4 +1,4 @@
-﻿namespace MyWebServer.App.ViewModels.Repositories
+﻿namespace Git.ViewModels.Repositories
 {
     public class RepositoryViewModel
     {

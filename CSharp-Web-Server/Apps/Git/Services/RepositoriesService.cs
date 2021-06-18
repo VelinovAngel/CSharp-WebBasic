@@ -1,12 +1,12 @@
-﻿namespace MyWebServer.App.Services
+﻿namespace Git.Services
 {
-    using MyWebServer.App.Data;
-    using MyWebServer.App.Data.Models;
-    using MyWebServer.App.ViewModels.Repositories;
     using System;
-    using System.Collections.Generic;
-    using System.Globalization;
     using System.Linq;
+    using System.Collections.Generic;
+
+    using Git.Data;
+    using Git.Data.Models;
+    using Git.ViewModels.Repositories;
 
     public class RepositoriesService : IRepositoriesService
     {

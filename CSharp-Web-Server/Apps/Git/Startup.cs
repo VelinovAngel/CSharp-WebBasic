@@ -1,11 +1,12 @@
-﻿namespace MyWebServer.App
+﻿namespace Git
 {
+    using Git.Data;
+    using MyWebServer;
+    using Git.Services;
     using System.Threading.Tasks;
-    using MyWebServer.App.Data;
     using MyWebServer.Controllers;
-    using Microsoft.EntityFrameworkCore;
     using MyWebServer.Results.Views;
-    using MyWebServer.App.Services;
+    using Microsoft.EntityFrameworkCore;
 
     public class Startup
     {

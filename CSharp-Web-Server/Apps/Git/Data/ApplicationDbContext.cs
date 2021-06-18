@@ -1,7 +1,7 @@
-﻿namespace MyWebServer.App.Data
+﻿namespace Git.Data
 {
     using Microsoft.EntityFrameworkCore;
-    using MyWebServer.App.Data.Models;
+    using Git.Data.Models;
 
     public class ApplicationDbContext : DbContext
     {

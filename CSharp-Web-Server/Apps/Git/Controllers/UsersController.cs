@@ -1,9 +1,9 @@
-﻿namespace MyWebServer.App.Controllers 
+﻿namespace Git.Controllers
 {
     using MyWebServer.Http;
     using MyWebServer.Controllers;
-    using MyWebServer.App.Services;
-    using MyWebServer.App.ViewModels.Users;
+    using Git.Services;
+    using Git.ViewModels.Users;
     public class UsersController : Controller
     {
         private readonly IUserService userService;
