@@ -22,17 +22,20 @@
                                 <th scope="col">Commit</th>
                             </tr>
                         </thead>
+                        @foreach (var repository in Model)
+                        {
                         <tbody>
                             <tr class="table-light">
-                                <th scope="row">ASP.NET Core Template</th>
-                                <td>Nikolay Kostov</td>
-                                <td>22/10/2018 08:00</td>
-                                <td>254</td>
+                                <th scope="row">@repository.Name</th>
+                                <td>@repository.Owner</td>
+                                <td>@repository.CreatedOn</td>
+                                <td>@repository.CommitsCout</td>
                                 <td>
-                                    <a class="btn btn-block btn-primary text-white mb-3" href="/Commits/Create?id=123">Commit</a>
+                                    <a class="btn btn-block btn-primary text-white mb-3" href="/Commits/Create?id=@repository.Id">Commit</a>
                                 </td>
                             </tr>
                         </tbody>
+                        }
                     </table>
                 </div>
             </div>

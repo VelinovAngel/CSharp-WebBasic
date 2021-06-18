@@ -28,7 +28,7 @@
 
             this.SignIn(userId);
 
-            return this.View("/Repositories/All");
+            return this.Redirect("/Repositories/All");
         }
 
         public HttpResponse Register()

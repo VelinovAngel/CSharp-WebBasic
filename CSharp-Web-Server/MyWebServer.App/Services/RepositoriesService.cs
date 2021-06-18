@@ -4,6 +4,9 @@
     using MyWebServer.App.Data.Models;
     using MyWebServer.App.ViewModels.Repositories;
     using System;
+    using System.Collections.Generic;
+    using System.Globalization;
+    using System.Linq;
 
     public class RepositoriesService : IRepositoriesService
     {
@@ -27,6 +30,17 @@
             this.db.Repositories.Add(repository);
             this.db.SaveChanges();
         }
+
+        public IEnumerable<RepositoryViewModel> GetAllRepository()
+            => this.db.Repositories.Select(x => new RepositoryViewModel
+            {
+                Id = x.Id,
+                Name = x.Name,
+                CreatedOn = x.CreatedOn.ToString("g"),
+                Owner = x.Owner.Username,
+                CommitsCout = x.Commits.Count()
+            })
+            .ToList();
 
         public bool IsPubluc(string repositoryType)
         {

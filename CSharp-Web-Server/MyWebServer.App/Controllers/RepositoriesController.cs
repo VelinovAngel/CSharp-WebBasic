@@ -16,7 +16,9 @@
 
         public HttpResponse All()
         {
-            return this.View();
+            var model = this.repositoriesService.GetAllRepository();
+
+            return this.View(model);
         }
 
         public HttpResponse Create()
