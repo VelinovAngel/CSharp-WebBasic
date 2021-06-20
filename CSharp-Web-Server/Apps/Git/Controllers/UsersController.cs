@@ -36,7 +36,7 @@
             return this.View();
         }
 
-        [HttpPost]
+        [HttpPost()]
         public HttpResponse Register(RegisterUserModel model)
         {
             if (model.Password != model.ConfirmPassword)
