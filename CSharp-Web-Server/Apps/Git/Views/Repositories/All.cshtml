@@ -24,17 +24,34 @@
                         </thead>
                         @foreach (var repo in Model)
                         {
-                        <tbody>
-                            <tr class="table-light">
-                                <th scope="row">@repo.Name</th>
-                                <td>@repo.Owner</td>
-                                <td>@repo.CreatedOn</td>
-                                <td>@repo.Commits</td>
-                                <td>
-                                    <a class="btn btn-block btn-primary text-white mb-3" href="/Commits/Create?repoId=@repo.Id">Commit</a>
-                                </td>
-                            </tr>
-                        </tbody>
+                            @if (repo.IsPublic == true && User == null)
+                            {
+                                <tbody>
+                                    <tr class="table-light">
+                                        <th scope="row">@repo.Name</th>
+                                        <td>@repo.Owner</td>
+                                        <td>@repo.CreatedOn</td>
+                                        <td>@repo.Commits</td>
+                                        <td>
+                                            <a class="btn btn-block btn-primary text-white mb-3" href="/Commits/Create?repoId=@repo.Id">Commit</a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            }
+                            @if (User != null)
+                            {
+                                <tbody>
+                                    <tr class="table-light">
+                                        <th scope="row">@repo.Name</th>
+                                        <td>@repo.Owner</td>
+                                        <td>@repo.CreatedOn</td>
+                                        <td>@repo.Commits</td>
+                                        <td>
+                                            <a class="btn btn-block btn-primary text-white mb-3" href="/Commits/Create?repoId=@repo.Id">Commit</a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            }
                         }
                     </table>
                 </div>

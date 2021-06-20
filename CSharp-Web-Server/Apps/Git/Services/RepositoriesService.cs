@@ -36,6 +36,7 @@
             {
                 Id = x.Id,
                 Name = x.Name,
+                IsPublic = x.IsPublic,
                 CreatedOn = x.CreatedOn.ToString("g"),
                 Owner = x.Owner.Username,
                 Commits = x.Commits.Count()
