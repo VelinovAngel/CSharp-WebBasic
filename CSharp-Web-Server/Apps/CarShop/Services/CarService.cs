@@ -35,6 +35,7 @@
             {
                 Model = x.Model,
                 Image = x.PictureUrl,
+                Year = x.Year,
                 PlateNumber = x.PlateNumber,
                 FixedIssues = x.Issues.Where(f => f.IsFixed).Count(),
                 RemainingIssues = x.Issues.Where(r => !r.IsFixed).Count(),

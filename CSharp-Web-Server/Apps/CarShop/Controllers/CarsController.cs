@@ -46,7 +46,7 @@
                 return this.Unauthorized();
             }
 
-            if (string.IsNullOrWhiteSpace(model.Model) || model.Model.Length < 5 || model.Model.Length>20)
+            if (string.IsNullOrWhiteSpace(model.Model) || model.Model.Length < 5 || model.Model.Length > 20)
             {
                 return this.Error("Invalid model");
             }
@@ -54,7 +54,11 @@
             {
                 return this.Error("Invalid plate number");
             }
-            if (Uri.IsWellFormedUriString(model.Image, UriKind.Absolute))
+
+            Uri uriResult;
+            bool result = Uri.TryCreate(model.Image, UriKind.Absolute, out uriResult)
+                && uriResult.Scheme == Uri.UriSchemeHttp;
+            if (result)
             {
                 return this.Error("Invalid url address");
             }
