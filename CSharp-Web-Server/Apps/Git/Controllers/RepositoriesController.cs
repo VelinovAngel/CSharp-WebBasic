@@ -21,12 +21,14 @@
             return this.View(model);
         }
 
+        [Authorize]
         public HttpResponse Create()
         {
             return this.View();
         }
 
         [HttpPost]
+        [Authorize]
         public HttpResponse Create(RegistrationViewModel model)
         {
             var userId = this.User.Id;

@@ -14,6 +14,7 @@
             this.commitsService = commitsService;
         }
 
+        [Authorize]
         public HttpResponse All()
         {
             var model = this.commitsService.GetAll();
@@ -21,6 +22,7 @@
         }
 
         [HttpPost]
+        [Authorize]
         public HttpResponse Create(string description, string id, string repoId)
         {
             if (string.IsNullOrWhiteSpace(description) || description.Length < 5)
@@ -33,6 +35,7 @@
             return this.Redirect("/Repositories/All");
         }
 
+        [Authorize]
         public HttpResponse Create(string id)
         {
             var repoName = this.commitsService.GetById(id);
@@ -45,6 +48,7 @@
             return this.View(model);
         }
 
+        [Authorize]
         public HttpResponse Delete(string id)
         {
             var userId = this.User.Id;
