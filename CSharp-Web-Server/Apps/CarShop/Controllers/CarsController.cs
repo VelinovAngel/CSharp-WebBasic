@@ -1,10 +1,10 @@
 ﻿namespace CarShop.Controllers
 {
-    using CarShop.Services;
-    using CarShop.ViewModels.Cars;
-    using MyWebServer.Controllers;
-    using MyWebServer.Http;
     using System;
+    using MyWebServer.Http;
+    using CarShop.Services;
+    using MyWebServer.Controllers;
+    using CarShop.ViewModels.Cars;
     using System.Text.RegularExpressions;
 
     public class CarsController : Controller
@@ -19,8 +19,16 @@
         public HttpResponse All()
         {
             var userId = this.User.Id;
-            var allCars = this.carService.GetAllCars(userId);
-            return this.View(allCars);
+            if (this.carService.IsMechanic(userId))
+            {
+                var allCarsWithIssues = this.carService.GetAllCarsWithIssues(userId);
+                return this.View(allCarsWithIssues);
+            }
+            else
+            {
+                var allCars = this.carService.GetAllCars(userId);
+                return this.View(allCars);
+            }
         }
 
         [Authorize]

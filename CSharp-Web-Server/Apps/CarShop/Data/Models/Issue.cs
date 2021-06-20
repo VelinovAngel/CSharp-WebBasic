@@ -1,9 +1,14 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace CarShop.Data.Models
+﻿namespace CarShop.Data.Models
 {
+    using System;
+    using System.ComponentModel.DataAnnotations;
+
     public class Issue
     {
+        public Issue()
+        {
+            this.Id = Guid.NewGuid().ToString();
+        }
         public string Id { get; set; }
 
         public string Description { get; set; }

@@ -10,5 +10,7 @@ namespace CarShop.Services
         bool IsMechanic(string userId);
 
         ICollection<AllCarsViewModel> GetAllCars(string userId);
+
+        ICollection<AllCarsViewModel> GetAllCarsWithIssues(string userId);
     }
 }

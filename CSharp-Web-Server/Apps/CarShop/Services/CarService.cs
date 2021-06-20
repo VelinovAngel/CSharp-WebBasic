@@ -30,9 +30,26 @@
         }
 
         public ICollection<AllCarsViewModel> GetAllCars(string userId)
-            => this.db.Cars.Where(x => x.OwnerId == userId)
+            => this.db.Cars
+            .Where(x => x.OwnerId == userId)
             .Select(x => new AllCarsViewModel
             {
+                Id = x.Id,
+                Model = x.Model,
+                Image = x.PictureUrl,
+                Year = x.Year,
+                PlateNumber = x.PlateNumber,
+                FixedIssues = x.Issues.Where(f => f.IsFixed).Count(),
+                RemainingIssues = x.Issues.Where(r => !r.IsFixed).Count(),
+            })
+            .ToList();
+
+        public ICollection<AllCarsViewModel> GetAllCarsWithIssues(string userId)
+            => this.db.Cars
+            .Where(x => x.Issues.Any(c => !c.IsFixed))
+            .Select(x => new AllCarsViewModel
+            {
+                Id = x.Id, 
                 Model = x.Model,
                 Image = x.PictureUrl,
                 Year = x.Year,
