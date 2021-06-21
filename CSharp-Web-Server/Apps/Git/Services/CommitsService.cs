@@ -35,6 +35,7 @@
         public IEnumerable<CommitViewModel> GetAll()
             => this.db.Commits.Select(x => new CommitViewModel
             {
+                Id = x.Id,
                 CreatedOn = x.CreatedOn.ToString("g"),
                 Description = x.Description,
                 Repository = x.Repository.Name
