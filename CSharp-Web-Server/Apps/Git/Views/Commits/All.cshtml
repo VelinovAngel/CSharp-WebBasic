@@ -4,8 +4,7 @@
             <div class="col-md-8 offset-md-2">
                 <div class="page-header text-center">
                     <h2 id="tables">My Commits</h2>
-                </div>
-
+                </div>            
                 <div class="component">
                     <table class="table table-hover">
                         <thead>
@@ -19,16 +18,16 @@
                         </thead>
                         @foreach (var commit in Model)
                         {
-                        <tbody>
-                            <tr class="table-light">
-                                <th scope="row">@commit.Repository</th>
-                                <td>@commit.Description</td>
-                                <td>@commit.CreatedOn</td>
-                                <td>
-                                    <a class="btn btn-block btn-primary text-white mb-3" href="/Commits/Delete?Id=@commit.Id">Delete</a>
-                                </td>
-                            </tr>
-                        </tbody>
+                            <tbody>
+                                <tr class="table-light">
+                                    <th scope="row">@commit.Repository</th>
+                                    <td>@commit.Description</td>
+                                    <td>@commit.CreatedOn</td>
+                                    <td>
+                                        <a class="btn btn-block btn-primary text-white mb-3" href="/Commits/Delete?Id=@commit.Id">Delete</a>
+                                    </td>
+                                </tr>
+                            </tbody>
                         }
                     </table>
                 </div>
