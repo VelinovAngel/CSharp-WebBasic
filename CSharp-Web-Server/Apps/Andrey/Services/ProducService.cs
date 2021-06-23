@@ -32,6 +32,18 @@
             this.db.SaveChanges();
         }
 
+        public void Delete(int id)
+        {
+            var product = this.db.Products.FirstOrDefault(x => x.Id == id);
+            this.db.Remove(product);
+            this.db.SaveChanges();
+        }
+
+        public Product Details(int id)
+            => this.db.Products
+            .Where(x => x.Id == id)
+            .FirstOrDefault();
+
         public IEnumerable<Product> GetAll()
             => this.db.Products.Select(x => new Product
             {

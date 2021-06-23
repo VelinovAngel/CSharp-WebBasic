@@ -9,5 +9,8 @@
 
         void Add(AllProductInputModel model);
 
+        Product Details(int id);
+
+        void Delete(int id);
     }
 }

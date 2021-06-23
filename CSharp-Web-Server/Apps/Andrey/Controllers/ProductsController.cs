@@ -14,11 +14,13 @@
             this.producService = producService;
         }
 
+        [Authorize]
         public HttpResponse Add()
         {
             return this.View();
         }
 
+        [Authorize]
         [HttpPost]
         public HttpResponse Add(AllProductInputModel model)
         {
@@ -32,6 +34,19 @@
             }
             this.producService.Add(model);
 
+            return this.Redirect("/");
+        }
+        [Authorize]
+        public HttpResponse Details(int id)
+        {
+            var product = this.producService.Details(id);
+            return this.View(product);
+        }
+
+        [Authorize]
+        public HttpResponse Delete(int id)
+        {
+            this.producService.Delete(id);
             return this.Redirect("/");
         }
     }
