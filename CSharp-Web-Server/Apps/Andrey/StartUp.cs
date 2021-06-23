@@ -18,9 +18,9 @@
                         .WithServices(service => service
                             .Add<IViewEngine, CompilationViewEngine>()
                             .Add<IUserService, UserService>()
-                            .Add<IProducService,ProducService>()
+                            .Add<IProducService, ProducService>()
                             .Add<AppDbContext>())
-                    .WithConfiguration<AppDbContext>(a=>a.Database.Migrate())
+                    .WithConfiguration<AppDbContext>(a => a.Database.Migrate())
                 .Start();
     }
 }

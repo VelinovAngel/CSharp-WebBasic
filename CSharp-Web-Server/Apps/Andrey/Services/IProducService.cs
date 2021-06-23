@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Andrey.Services
+﻿namespace Andrey.Services
 {
-    class IProducService
+    using Andrey.Data.Models;
+    using Andrey.ViewModels.Products;
+    using System.Collections.Generic;
+    public interface IProducService
     {
+        IEnumerable<Product> GetAll();
+
+        void Add(AllProductInputModel model);
+
     }
 }

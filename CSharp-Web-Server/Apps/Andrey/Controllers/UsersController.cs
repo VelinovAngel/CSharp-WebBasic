@@ -58,7 +58,7 @@
                 return this.Error($"The email '{model.Email}' already exists");
             }
             this.userService.Register(model);
-            return this.View();
+            return this.Redirect("/Users/Login");
         }
 
         public HttpResponse Logout()

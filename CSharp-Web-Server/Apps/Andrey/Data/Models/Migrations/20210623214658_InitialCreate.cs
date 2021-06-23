@@ -10,7 +10,8 @@ namespace Andrey.Data.Models.Migrations
                 name: "Products",
                 columns: table => new
                 {
-                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
                     Description = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: true),
                     ImageUrl = table.Column<string>(type: "nvarchar(max)", nullable: true),

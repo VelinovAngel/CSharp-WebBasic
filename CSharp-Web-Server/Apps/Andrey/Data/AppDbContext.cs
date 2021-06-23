@@ -18,5 +18,13 @@ namespace Andrey.Data
                 optionsBuilder.UseSqlServer(SqlServerAddress);
             }
         }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder
+                 .Entity<Product>()
+                 .Property(x => x.Id)
+                 .ValueGeneratedOnAdd();
+        }
     }
 }
