@@ -38,5 +38,9 @@
             this.userService.Register(model);
             return this.Redirect("/");
         }
+
+        public HttpResponse Login() => this.View();
+
+
     }
 }
