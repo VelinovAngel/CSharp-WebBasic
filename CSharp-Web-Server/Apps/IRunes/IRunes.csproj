@@ -16,10 +16,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<None Remove="Views\Error.cshtml" />
-	</ItemGroup>
-
-	<ItemGroup>
 		<Folder Include="wwwroot\img\" />
 	</ItemGroup>
 
@@ -28,10 +24,16 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<Folder Include="Controllers\" />
-		<Folder Include="Data\Models\" />
 		<Folder Include="ViewModels\" />
 		<Folder Include="Services\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.7">
+	    <PrivateAssets>all</PrivateAssets>
+	    <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+	  </PackageReference>
+	  <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.7" />
 	</ItemGroup>
 
 </Project>

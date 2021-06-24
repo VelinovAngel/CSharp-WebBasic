@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace IRunes.Controllers
+﻿namespace IRunes.Controllers
 {
-    class HomeController
+    using MyWebServer.Controllers;
+    using MyWebServer.Http;
+
+    public class HomeController : Controller
     {
+        public HttpResponse Index() => this.View();
     }
 }
