@@ -21,7 +21,7 @@
         {
             if (model.Password != model.ConfirmPassword)
             {
-
+                return this.Redirect("/Users/Register");
             }
             return this.Redirect("/");
         }
