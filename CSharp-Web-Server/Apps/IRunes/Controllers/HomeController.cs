@@ -5,6 +5,16 @@
 
     public class HomeController : Controller
     {
-        public HttpResponse Index() => this.View();
+        public HttpResponse IndexSlash() => this.View();
+
+
+        public HttpResponse Index()
+        {
+            if (this.User.IsAuthenticated)
+            {
+                return this.View("Home");
+            }
+            return this.View();
+        }
     }
 }
