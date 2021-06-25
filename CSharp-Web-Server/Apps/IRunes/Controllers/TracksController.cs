@@ -24,13 +24,6 @@
         public HttpResponse Create(CreateInputModel model)
         {
 
-            //var model = new CreateInputModel
-            //{
-            //    AlbumId = albumId,
-            //    Name = name,
-            //    Link = link,
-            //    Price = price
-            //};
             this.trackService.Create(model);
             return this.View();
         }

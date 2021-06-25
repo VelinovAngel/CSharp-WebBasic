@@ -17,8 +17,10 @@
 
 	<ItemGroup>
 	  <None Remove="Views\Albums\All.cshtml" />
+	  <None Remove="Views\Albums\Create.html" />
 	  <None Remove="Views\Albums\Details.cshtml" />
 	  <None Remove="Views\Error.html" />
+	  <None Remove="Views\Tracks\Create.html" />
 	  <None Remove="Views\Tracks\Details.html" />
 	</ItemGroup>
 
