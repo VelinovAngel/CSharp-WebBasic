@@ -26,7 +26,7 @@
         {
             if (string.IsNullOrWhiteSpace(model.Name) || model.Name.Length < 4 || model.Name.Length > 20)
             {
-
+                return this.Redirect("/Tracks/Create");
             }
 
             this.trackService.Create(model);
@@ -44,7 +44,5 @@
 
             return this.View(viewModel);
         }
-
-
     }
 }
