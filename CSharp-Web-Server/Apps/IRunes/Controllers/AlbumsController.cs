@@ -40,6 +40,7 @@
             return this.Redirect("/Albums/All");
         }
 
+        [Authorize]
         public HttpResponse Details(string id)
         {
             var model = this.albumService.AlbumDetailsModel(id);
