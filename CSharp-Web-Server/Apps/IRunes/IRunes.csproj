@@ -16,6 +16,13 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Views\Albums\All.cshtml" />
+	  <None Remove="Views\Albums\Details.cshtml" />
+	  <None Remove="Views\Error.html" />
+	  <None Remove="Views\Tracks\Details.html" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<Folder Include="wwwroot\img\" />
 	</ItemGroup>
 

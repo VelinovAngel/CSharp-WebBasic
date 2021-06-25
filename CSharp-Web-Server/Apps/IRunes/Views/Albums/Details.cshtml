@@ -13,13 +13,13 @@
         <div class="album-tracks col-md-6">
             <h1>Tracks</h1>
             <ul>
-                @for(int i = 0; i < Model.Tracks.Count(); i++)
+                @for (int i = 0; i < Model.Tracks.Count(); i++)
                 { var track = Model.Tracks.ToList()[i];
                     <li>
                         <strong>@(i+1)</strong>.
-                        <a href="/Tracks/Details?albumId=@Model.Id&trackId=@track.Id">@track.Name</a>
+                            <a href="/Tracks/Details?albumId=@Model.Id&trackId=@track.Id">@track.Name</a>
                     </li>
-                }
+                    }
             </ul>
         </div>
     </div>

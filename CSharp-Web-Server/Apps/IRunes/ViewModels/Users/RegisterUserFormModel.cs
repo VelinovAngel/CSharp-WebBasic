@@ -1,4 +1,4 @@
-﻿namespace IRunes.ViewModels
+﻿namespace IRunes.ViewModels.Users
 {
     public class RegisterUserFormModel
     {
