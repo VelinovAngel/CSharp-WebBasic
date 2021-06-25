@@ -23,8 +23,8 @@
         public string Cover { get; set; }
 
         [Required]
-        public decimal Price 
-            => this.Tracks.Sum(x => x.Price *= 0.87M);
+        public decimal Price { get; set; }
+     
 
         public ICollection<Track> Tracks { get; set; }
     }

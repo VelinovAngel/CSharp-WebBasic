@@ -3,6 +3,7 @@
     using IRunes.Data;
     using IRunes.Data.Models;
     using IRunes.ViewModels;
+    using System.Linq;
 
     public class TrackService : ITrackService
     {
@@ -22,6 +23,13 @@
                 Link = model.Link,
                 Price = model.Price
             };
+
+            var allTrackPricesSum = this.db.Tracks
+                .Where(x => x.AlbumId == model.AlbumId)
+                .Sum(x => x.Price) + model.Price;
+            var album = this.db.Albums.Find(model.AlbumId);
+            album.Price = allTrackPricesSum * 0.87M;
+
             this.db.Tracks.Add(tracks);
             this.db.SaveChanges();
         }
