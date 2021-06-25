@@ -14,6 +14,7 @@
             this.trackService = trackService;
         }
 
+        [Authorize]
         public HttpResponse Create(string albumId)
         {
             var viewModel = new CreateViewModel { AlbumId = albumId, Id = albumId };
@@ -23,9 +24,27 @@
         [HttpPost]
         public HttpResponse Create(CreateInputModel model)
         {
+            if (string.IsNullOrWhiteSpace(model.Name) || model.Name.Length < 4 || model.Name.Length > 20)
+            {
+
+            }
 
             this.trackService.Create(model);
-            return this.View();
+            return this.Redirect($"/Albums/Details?id={model.AlbumId}");
         }
+
+        [Authorize]
+        public HttpResponse Details(string trackId)
+        {
+            var viewModel = this.trackService.GetDetails(trackId);
+            if (viewModel == null)
+            {
+                return this.Error("Track not found.");
+            }
+
+            return this.View(viewModel);
+        }
+
+
     }
 }

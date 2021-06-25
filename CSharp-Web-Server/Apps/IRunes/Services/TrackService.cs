@@ -33,5 +33,19 @@
             this.db.Tracks.Add(tracks);
             this.db.SaveChanges();
         }
+
+        public DetailsViewModel GetDetails(string trackId)
+        {
+            var track = this.db.Tracks.Where(x => x.Id == trackId)
+                .Select(x => new DetailsViewModel
+                {
+                    Name = x.Name,
+                    Link = x.Link,
+                    AlbumId = x.AlbumId,
+                    Price = x.Price,
+                }).FirstOrDefault();
+
+            return track;
+        }
     }
 }
