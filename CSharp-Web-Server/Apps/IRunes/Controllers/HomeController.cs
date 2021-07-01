@@ -1,7 +1,6 @@
 ﻿namespace IRunes.Controllers
 {
     using IRunes.Services;
-    using IRunes.ViewModels.Users;
     using MyWebServer.Controllers;
     using MyWebServer.Http;
 
